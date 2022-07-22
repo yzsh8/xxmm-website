@@ -11,8 +11,27 @@ class NovelBook extends Model
     //
     protected $table = 'novel_book';
 
+    //通过id来读取分类名称
+    public function GetNameForId($id = 0){
+        $cacheKey = 'novel_book_names:'.$id;
+
+        $name = Redis::get($cacheKey);
+        if($name){
+            return $name;
+        }
+
+        //从数据库读取数据
+        $info = self::select('id','name')->where('status',1)->where('id',$id)->first();
+
+        //写入redis
+        Redis::set($cacheKey,$info['name']);
+        Redis::expire($cacheKey,3600*24);
+
+        return $info['name'];
+    }
+
     //读取最新小说列表
-    public function GetNews($limit=12,$sort='')
+    public function GetNews($limit=12,$sort='id')
     {
         $cacheKey = 'novel:news-'.$limit;
         $novel = [];

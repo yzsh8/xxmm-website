@@ -135,6 +135,21 @@ width:device-width
 	-moz-opacity:.7;
 	-khtml-opacity:.7
 }
+.book-bg {
+	position:absolute;
+	bottom:0;
+	left:0;
+	display:block;
+	width:100%;
+	height:100%;
+	/*background:#000 url(../images/book.png) no-repeat scroll center 80%;*/
+	line-height:24px;
+	opacity:.7;
+	cursor:pointer;
+	filter:alpha(opacity=70);
+	-moz-opacity:.7;
+	-khtml-opacity:.7
+}
 #mh-ul {
 	padding:5px 10px 0 10px
 }
@@ -178,7 +193,7 @@ width:70px;
 text-align:center
 }
 .p2 {
-margin-right:20px;
+margin-right:16px;
 width:140px
 }
 .p2 img {
@@ -256,12 +271,12 @@ width:180px;
 height:230px
 }
 .ct-l {
-width:230px
+width:788px
 }
 .ct-l img {
 width:100%;
 -webkit-border-radius: 10px;
-height:300px;
+height:530px;
 
 }
 .ct-o {
@@ -273,8 +288,8 @@ height:10px;
 
 }
 .ct-c {
-margin-left:20px;
-width:630px
+margin-left:17px;
+width:395px
 }
 .ct-c dd, .ct-c dt {
 overflow:hidden;
@@ -285,6 +300,74 @@ line-height:30px
 float:right;
 width:300px
 }
+
+.bt-l {
+width:230px
+}
+.bt-l img {
+width:100%;
+-webkit-border-radius: 10px;
+height:300px;
+
+}
+.bt-o {
+width:230px
+}
+.bt-o img {
+width:100%;
+height:10px;
+
+}
+.bt-c {
+margin-left:20px;
+width:630px
+}
+.bt-c dd, .bt-c dt {
+overflow:hidden;
+height:30px;
+line-height:30px
+}
+.bt-r {
+float:right;
+width:300px
+}
+.bt-c, .bt-l {
+	float:left
+}
+.bt-c dl, .bt-c dl a {
+	color:#333
+}
+.bt-c .name {
+	color:#333;
+	font-weight:800;
+	font-size:16px;
+	font-family:hzguangbiao
+}
+.bt-c .name .bz {
+	padding-left:5px;
+	color:#777;
+	font-weight:400;
+	font-size:14px
+}
+.bt-c dl a:hover {
+	color:#f06000
+}
+.bt-c .ee .js, .bt-c dd span, .bt-c dt span {
+	color:#777
+}
+.bt-c .ee .y {
+	padding-left:5px;
+	color:#f06000
+}
+.bt-c .ee {
+	float:left;
+	line-height:30px
+}
+.bt-c dd {
+	float:left;
+	width:50%
+}
+
 .videourl {
 margin-left:-10px
 }
@@ -1393,6 +1476,27 @@ title{position: relative;line-height:200%;font-size:16px;font-weight:400;margin-
 .playlist .jj span {
 	margin-left:10px
 }
+
+.on .jj {
+	float:right;
+	display:inline-block
+}
+.on .jj em {
+	padding:2px 5px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	background:#f1f1f1;
+	font-style:normal;
+	cursor:pointer
+}
+.on .jj em.over {
+	background:#fff;
+	color:#333
+}
+.on .jj span {
+	margin-left:10px
+}
+
 .videourl {
 	padding:5px 0
 }
@@ -1878,14 +1982,14 @@ margin-bottom:.5rem
 .channel-silder-img {
 	float:left;
 	overflow:hidden;
-	width:230px;
+	width:410px;
 	height:310px
 }
 .channel-silder-img img {
 	display:block;
 	overflow:hidden;
 	padding:2px;
-	width:220px;
+	width:400px;
 	height:300px;
 	border:2px solid #344956;
 	background:url(../images/loading.gif) no-repeat scroll center center transparent #222
@@ -1894,7 +1998,7 @@ margin-bottom:.5rem
 	float:left;
 	overflow:hidden;
 	padding:0 20px;
-	width:700px;
+	width:550px;
 	height:310px;
 	color:#999;
 	font-size:14px;
@@ -2308,4 +2412,28 @@ margin-bottom:.5rem
 
 .mbd_ad{display:block !important;}
 
+}
+
+.mydrawing{
+      width: 150px;
+      margin: 10px;
+    }
+.mydrawing:hover{
+  cursor: zoom-in;
+}
+.wrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: rgba(52, 52, 52, 0.8);
+  background-size: 50%;
+}
+.wrapper:hover{
+  cursor: zoom-out;
 }

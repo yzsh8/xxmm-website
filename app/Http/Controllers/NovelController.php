@@ -136,10 +136,21 @@ class NovelController extends Controller
 		}
 
 		$cid 	=	$info['cid'];
+		$bid	= 	$info['bid'];
+
+		//获取上一页id
+		$left = NovelChapter::select('id','name','bid','cid')->where('status',1)->where('bid',$bid)->where('id','<',$id)->orderby('id','desc')->first();
+		//获取下一页id
+		$right = NovelChapter::select('id','name','bid','cid')->where('status',1)->where('bid',$bid)->where('id','>',$id)->orderby('id','asc')->first();
+
 		return view('novel_chapter',[
 			'cid'		=>	$cid,		//分类
 			'category'	=>	NovelCategory::GetNameForId($cid),
 			'info'		=>	$info,
+			'bid'		=> 	$bid,
+			'bookname' 	=> 	NovelBook::GetNameForId($bid),
+			'left'		=>  isset($left['id'])?$left['id']:0,
+			'right'		=>  isset($right['id'])?$right['id']:0,
 		]);
 	}
 	

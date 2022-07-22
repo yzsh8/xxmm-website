@@ -93,7 +93,7 @@ class MovieController extends Controller
         $magneticlink = json_decode($info['magneticlink'],true);
 
         //截图列表
-        $pic = json_decode($info['pic'],true);
+        $pic = $info['pic']?json_decode($info['pic'],true):[];
 
         //获取相关影片，猜你喜欢
         $related = Movie::GetRelated($info['id']);

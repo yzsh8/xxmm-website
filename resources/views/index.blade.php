@@ -32,8 +32,8 @@
               </ul>
               <p class="channel-silder-desc"> 标签：
                 <span>
-                    @isset($label)
-                    @foreach ($label as $ac)
+                    @isset($v->label)
+                    @foreach ($v->label as $ac)
                     <a href="/movie/label/{{$ac->id}}">{{$ac->name}}</a>
                     @endforeach
                     @endisset

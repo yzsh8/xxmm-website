@@ -1,7 +1,7 @@
 @extends('layout') @section('content')
 
 <div class="main">
-  <h1 class="title"><a href="/">首页</a>&nbsp;>&nbsp;<a href="/novel">小说</a>&nbsp;>&nbsp;<a href="/novel/category/{{$cid}}">{{$category}}<</a> </h1>
+  <h1 class="title"><a href="/">首页</a>&nbsp;>&nbsp;<a href="/novel">小说</a>&nbsp;>&nbsp;<a href="/novel/category/{{$cid}}">{{$category}}</a> </h1>
   <div class="ct mb clearfix">
     <div class="bt-l"> <img class="lazy" data-original="{{get_web_url($info->pic)}}" src="/skin/ecms106/images/load.gif" alt="{{$info['name']}}"> </div>
     <div class="bt-c">
