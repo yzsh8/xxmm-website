@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\NovelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::any('/', [IndexController::class, 'index'])->name('index');
+Route::any('/movie/{cid?}', [MovieController::class, 'index'])->name('movie');
+Route::any('/movie/category/{cid?}', [MovieController::class, 'index'])->name('movie.category');
+Route::any('/movie/show/{number?}', [MovieController::class, 'show'])->name('movie.show');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::any('/novel', [NovelController::class, 'index'])->name('novel.index');
+Route::any('/novel/category/{cid?}', [NovelController::class, 'lists'])->name('novel.lists');
+Route::any('/novel/book/{id?}', [NovelController::class, 'book'])->name('novel.book');
+Route::any('/novel/book/chapter/{id?}', [NovelController::class, 'chapter'])->name('novel.book.chapter');
