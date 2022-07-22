@@ -89,6 +89,17 @@ class NovelController extends Controller
 			]);
 		}
 
+		$ip = request()->ip();
+		$cacheKey = 'novel:book:'.$info['id'].':'.$ip;
+		$isView = Redis::get($cacheKey);
+		if(!$isView){
+			//点击数+1
+			NovelBook::where('id',$info['id'])->increment('view_num', 1);
+
+			//加入缓存
+			Redis::set($cacheKey,1);
+		}
+
 		//处理状态
 		$speed 		= ($info->speed==2)?'完本':'连载中';
 

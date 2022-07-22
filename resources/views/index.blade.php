@@ -155,7 +155,7 @@
 </div>     
 
 <div class="index-area clearfix">
-    <h1 class="title index-color"><span class="hitkey kp"><a href="/noval">更多»</a></span> <a href="/novel">成人小说</a></h1>
+    <h1 class="title index-color"><span class="hitkey kp"><a href="/novel">更多»</a></span> <a href="/novel">成人小说</a></h1>
     <ul>
       @foreach ($novelbook as $v)
         <li class="p1 m1">

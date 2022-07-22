@@ -1,0 +1,16 @@
+.comment tr td{
+	height: 40px;
+	line-height: 40px;
+	white-space:pre-wrap
+}
+
+.comment input{
+	height: 28px;
+	line-height: 28px;
+	width: 300px;
+}
+
+.comment textarea{
+	height: 50px;
+	width: 300px;
+}

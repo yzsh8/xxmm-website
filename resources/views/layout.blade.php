@@ -30,12 +30,13 @@
         <li><a class="now" rel="nofollow" href="/">首页</a></li>
         <li class="" _t_nav="topnav-1"><a href="/movie">成人电影<i class="sjbgs"></i><i class="sjbgx"></i></a></li>
         <li class="" _t_nav="topnav-2"><a href="/novel">小说<i class="sjbgs"></i><i class="sjbgx"></i></a></li>
-        <li class=""><a href="/fankui">反馈</a></li>
+        <li class=""><a href="/feedback">反馈</a></li>
     </ul>
     </ul>
     <ul class="search so">
       <form action="/search" method="post">
-        <input type="text" id="wd" name="keyboard" class="input" onblur="if(this.value==''){ this.value='请输入影片或演员名';this.style.color='#cfcdcd';}" onfocus="if(this.value=='请输入影片或演员名'){this.value='';this.style.color='';}" value="请输入影片或演员名" />
+        <input type="text" id="wd" name="keyword" class="input" onblur="if(this.value==''){ this.value='请输入影片或演员名';this.style.color='#cfcdcd';}" onfocus="if(this.value=='请输入影片或演员名'){this.value='';this.style.color='';}" value="请输入影片或演员名" />
+        {{ csrf_field() }}
         <input type="submit" name="submit" class="imgbt" value="" />
       </form>
     </ul>
@@ -100,7 +101,8 @@
     <div id="sj-nav-search" class="nav-down-1 sy2 sj-noover" style="display:none;" _t_nav1="sj-nav-search">
       <div class="nav-down-2 sj-nav-down-search clearfix">
         <form action="/search" method="post">
-        <input type="text" id="wd" name="keyboard" class="input" onblur="if(this.value==''){ this.value='请输入影片或演员名';this.style.color='#cfcdcd';}" onfocus="if(this.value=='请输入影片或演员名'){this.value='';this.style.color='';}" value="请输入影片或演员名" />
+        <input type="text" id="wd" name="keyword" class="input" onblur="if(this.value==''){ this.value='请输入影片或演员名';this.style.color='#cfcdcd';}" onfocus="if(this.value=='请输入影片或演员名'){this.value='';this.style.color='';}" value="请输入影片或演员名" />
+        {{ csrf_field() }}
         <input type="submit" name="submit" class="imgbt" value="搜 索" />
       </form>
       </div>
@@ -120,7 +122,8 @@
 <!--/底部--> 
 ﻿
 <div class="footer clearfix">
-  <p>免责声明:本站所有视频均来自互联网收集而来，版权归原创者所有，如果侵犯了你的权益，请在上方导航栏相关区域通知我们，我们会及时删除侵权内容，谢谢合作。</p>
+  <p><a href="/page/1">关于我们</a> <a href="/page/2">隐私条款</a> <a href="/page/3">磁链教程</a> <a href="/page/4">联系我们</a> <a href="/feedback">意见反馈</a></p>
+  <p>免责声明:本站所有视频均来自互联网收集而来，版权归原创者所有，谢谢配合。</p>
   Copyright &copy; 2002-{{ date('Y') }} [XXMM] ICP备12345678号  在线统计  <!-----------本站统计结束---> 
 </div>
 

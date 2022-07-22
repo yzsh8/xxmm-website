@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\NovelController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +27,9 @@ Route::any('/novel', [NovelController::class, 'index'])->name('novel.index');
 Route::any('/novel/category/{cid?}', [NovelController::class, 'lists'])->name('novel.lists');
 Route::any('/novel/book/{id?}', [NovelController::class, 'book'])->name('novel.book');
 Route::any('/novel/book/chapter/{id?}', [NovelController::class, 'chapter'])->name('novel.book.chapter');
+
+Route::any('/page/{id}', [PageController::class, 'index'])->name('page.index');
+Route::any('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::any('/feedback/save', [FeedbackController::class, 'save'])->name('feedback.save');
+
+Route::any('/search', [SearchController::class, 'search'])->name('search');

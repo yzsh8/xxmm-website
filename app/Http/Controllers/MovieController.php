@@ -41,6 +41,7 @@ class MovieController extends Controller
 
 		return view('movie',[
 			'ml'		=> 	$movieLists,		//数据列表
+			'search'	=>	'',					//搜索条件
 			'total'   	=>  $total,				//总记录数
 			'limit'		=> 	$limit,				//每页多少条
 			'cid'		=>	$cid,				//分类
@@ -68,7 +69,8 @@ class MovieController extends Controller
 			]);
 		}
 
-		$cacheKey = 'movie:show:'.$info['id'];
+		$ip = request()->ip();
+		$cacheKey = 'movie:show:'.$info['id'].':'.$ip;
 		$isView = Redis::get($cacheKey);
 		if(!$isView){
 			//点击数+1
@@ -105,7 +107,8 @@ class MovieController extends Controller
 		$cid 	=	$info['cid'];
 		return view('movie_show',[
 			'info'		=> 	$info,		//数据
-			'cid'		=>	$cid,		//
+			'search'	=>	'',			//搜索条件
+			'cid'		=>	$cid,		
 			'category'	=>	MovieCategory::GetNameForId($cid),
 			'actor'		=>	$actor,
 			'label'		=> 	$label,
