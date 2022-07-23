@@ -90,7 +90,7 @@ textarea {
 	display:none
 }
 .mb {
-	margin-bottom:25px
+	margin-bottom:20px
 }
 @-ms-viewport {
 width:device-width
@@ -1445,7 +1445,6 @@ title{position: relative;line-height:200%;font-size:16px;font-weight:400;margin-
 }
 .playlist {
 	margin-top:-1px;
-	margin-bottom:20px;
 	border-top:1px solid #ccc
 }
 .playlist .h1 {

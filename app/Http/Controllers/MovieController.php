@@ -13,6 +13,7 @@ use App\Models\MovieFilm;
 use App\Models\MovieActor;
 use App\Models\MovieLabel;
 use App\Models\Movie;
+use App\Models\VideoNotice;
 use Illuminate\Support\Facades\Redis;
 
 class MovieController extends Controller
@@ -104,6 +105,9 @@ class MovieController extends Controller
 			$related[$k] = $v;
 		}
 
+		//读取视频播放器定义的滚动字幕
+		$videoNotice = VideoNotice::GetLists();
+
 		$cid 	=	$info['cid'];
 		return view('movie_show',[
 			'info'		=> 	$info,		//数据
@@ -115,6 +119,7 @@ class MovieController extends Controller
 			'mlink' 	=>	$magneticlink,
 			'pic'		=>	$pic,
 			'related'	=> 	$related,
+			'notice'	=>	$videoNotice,
 		]);
 
 	}

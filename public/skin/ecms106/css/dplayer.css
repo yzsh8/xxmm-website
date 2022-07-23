@@ -1,0 +1,18 @@
+.dplayer-logo {
+    pointer-events: none;
+    position: absolute;
+    float: right;
+    left:unset;
+    right: 20px;
+    top: 50px;
+    max-width: 150px;
+    width: 146px;
+    height: 46px;
+}
+.dplayer-logo img{
+    width: 146px;
+    height: 46px;
+}
+.dplayer-danmaku-item {
+    background-color:#C0C0C0; 
+}

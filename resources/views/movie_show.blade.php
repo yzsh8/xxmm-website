@@ -1,4 +1,5 @@
 @extends('layout') @section('content')
+<link href="/skin/ecms106/css/dplayer.css" rel="stylesheet">
 
 <div class="main">
   <h1 class="title"><a href="/">首页</a>&nbsp;>&nbsp;<a href="/movie/">电影</a>&nbsp;>&nbsp;<a href="/movie/{{$cid}}/">{{$category}}</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href="/movie/show/{{$info['number']}}">{{$info['name']}}</a> </h1>
@@ -169,8 +170,21 @@
 
   const dp = new DPlayer({
       container: document.getElementById('dplayer'),
+      preload: 'auto',
+      logo:'/skin/ecms106/images/logo.png',
+      danmaku: true,
       video: {
           url: '{{$info['video']}}',
+          pic: '{{get_web_url($info->avatar)}}',
+      },
+      danmaku: {
+        id: '9E2E3368B4',
+        api: '/api/notice?',
+        token: 'token',
+        maximum: 1000,
+        user: 'DIYgod',
+        type:'bottom',
+        unlimited: true
       },
   });
 </script>
