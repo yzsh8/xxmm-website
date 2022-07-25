@@ -1,8 +1,8 @@
 @extends('layout') @section('content')
 
 <div class="main">
-  <h1 class="title"><a href="/">首页</a>
-      &nbsp;>&nbsp;<a href="/movie/0/">电影</a>
+  <h1 class="title"><a href="/">{{ trans('menu.home')}}</a>
+      &nbsp;>&nbsp;<a href="/movie/0/">{{ trans('menu.movie')}}</a>
       @if($category)
       &nbsp;>&nbsp;<a href="/movie/{{$cid}}/">{{$category}}</a>
       @endif
@@ -14,7 +14,7 @@
     <p class="jg"> 
       {{$search}}
     </p>
-    <p class="px"> <a class="time on" href="/movie/{{$cid}}?sort=new"><em></em>最新</a> <a class="rq" href="/movie/{{$cid}}?sort=click"><em></em>人气</a></p>
+    <p class="px"> <a class="time on" href="/movie/{{$cid}}?sort=new"><em></em>{{ trans('movie.sort-new')}}</a> <a class="rq" href="/movie/{{$cid}}?sort=click"><em></em>{{ trans('movie.sort-view')}}</a></p>
   </div>
   <div class="index-area clearfix">
     <ul>
@@ -27,7 +27,7 @@
                   <p class="name">{{$v->name}}</p>
                   <p class="actor">{{$v->number}}</p>
                   <p class="actor">{{$v->category}}</p>
-                  <p class="actor">{{ intval((int)$v->publish_time/60) }}分钟</p>
+                  <p class="actor">{{ intval((int)$v->publish_time/60) }}{{ trans('movie.minute')}}</p>
               </span>
               <p class="other"><i></i></p>
             </a> 
@@ -48,7 +48,7 @@
       "nowpage":{{$page}},    //当前页面
       "callback":function(now){
           window.location.href="/movie/{{$cid}}/?sort={{$sort}}&page="+now; 
-          console.log('当前页:' + now);
+          //console.log('当前页:' + now);
        }
     });
 </script>

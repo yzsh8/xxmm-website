@@ -1,0 +1,20 @@
+<?php
+return [
+    'category' => 'Category',
+    'status' => 'Status',
+    'author' => 'Author',
+    'chapter'=>'Chapter',
+    'tops'  => 'Recommended',
+    'hots'  => 'Hots',
+    'lists'     => 'Lists',
+    'updated'   =>  'Updated',
+    'desc'      =>  'Desc',
+    'ads'       =>  'Ads',
+    'asc'       =>  'Asc',
+    'desc'      =>  'Desc',
+    'catalogue' =>  'Catalogue',
+    'previous'  =>  'Previous',
+    'next'      =>  'Next',
+    'sort-new'  =>  'News',
+    'sort-view'  =>  'Hots',
+];

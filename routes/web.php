@@ -8,17 +8,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\TestController;
+use Illuminate\Support\Facades\Session;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 Route::any('/', [IndexController::class, 'index'])->name('index');
 Route::any('/movie/{cid?}', [MovieController::class, 'index'])->name('movie');
 Route::any('/movie/category/{cid?}', [MovieController::class, 'index'])->name('movie.category');
@@ -35,3 +27,9 @@ Route::any('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::any('/feedback/save', [FeedbackController::class, 'save'])->name('feedback.save');
 
 Route::any('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/language/{locale}',function($locale){
+    app()->setLocale($locale);
+    session()->put('locale',$locale);
+    return back();
+})->name('language');

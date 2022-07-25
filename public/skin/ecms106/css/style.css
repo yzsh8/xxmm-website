@@ -759,7 +759,6 @@ width:320px
 	display:none
 }
 .nav-qt li.hover a {
-	background:url(../images/men-top.png) no-repeat scroll center bottom;
 	color:#ff6600
 }
 .nav-qt .hover .cc {
@@ -804,7 +803,6 @@ width:320px
 	line-height:22px
 }
 .nav-qt li.hover .ma {
-	background:url(../images/men-top.png) no-repeat scroll center bottom;
 	color:#ff6600
 }
 .nav-qt li.bb .mbbg {
@@ -824,7 +822,7 @@ width:320px
 }
 .nav-qt .mbp {
 	padding:10px;
-	width:250px;
+	width:80px;
 	border:1px solid #afafaf;
 	border-top:0;
 	background:#f6f6f9;
