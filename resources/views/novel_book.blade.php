@@ -23,12 +23,12 @@
     </div>
   </div>
 
-<div class="pcd_ad" style="margin-bottom: 10px;">
+<!--<div class="pcd_ad" style="margin-bottom: 10px;">
     <img src="/images/ads-home.png">
 </div>
 <div class="mbd_ad"  style="margin-bottom: 10px;">
     <img src="/images/ads-mobil.png" width="100%">
-</div>
+</div>-->
 
 <div class="tab-down mb clearfix">
     <div class="playfrom tab8 clearfix">

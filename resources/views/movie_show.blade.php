@@ -31,12 +31,12 @@
     </div>
   </div>
 
-<div class="pcd_ad" style="margin-bottom: 10px;">
+<!--<div class="pcd_ad" style="margin-bottom: 10px;">
     <img src="/images/ads-home.png">
 </div>
 <div class="mbd_ad"  style="margin-bottom: 10px;">
     <img src="/images/ads-mobil.png" width="100%">
-</div>
+</div>-->
 
   <div class="tab-title tab mb clearfix">
     <ul>
@@ -108,12 +108,12 @@
   </div>
 
 
-<div class="pcd_ad">
+<!--<div class="pcd_ad">
     <img src="/images/ads-home.png">
 </div>
 <div class="mbd_ad">
     <img src="/images/ads-mobil.png" width="100%">
-</div> 
+</div>--> 
 
   <div class="index-area clearfix" >
     <h4 class="title index-color">{{ trans('movie.youlike')}}</h4>

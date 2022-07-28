@@ -39,7 +39,7 @@
     </div>
   </div>
 
-<div class="pcd_ad">
+<!--<div class="pcd_ad">
   <table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
     <tr align="center">
       <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.pcads')}}</td>
@@ -52,7 +52,7 @@
       <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.mobielads')}}</td>
     </tr>
   </table>
-</div>
+</div>-->
 
   <div class="index-area clearfix">
     <h1 class="title index-color"> <span class="hitkey kp"></span> <a href="/novel/category">{{ trans('novel.lists')}}</a> </h1>
