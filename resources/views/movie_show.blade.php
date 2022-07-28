@@ -153,7 +153,7 @@
   const dp = new DPlayer({
       container: document.getElementById('dplayer'),
       preload: 'auto',
-      logo:'/skin/ecms106/images/logo.png',
+      logo:'/images/shuiyin.png',
       danmaku: true,
       video: {
           url: '{{$info['video']}}',
