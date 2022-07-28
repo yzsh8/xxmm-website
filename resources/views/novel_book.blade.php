@@ -6,7 +6,7 @@
     <div class="bt-l"> <img class="lazy" data-original="{{get_web_url($info->pic)}}" src="/skin/ecms106/images/load.gif" alt="{{$info['name']}}"> </div>
     <div class="bt-c">
       <dl>
-        <dt class="name">{{$info['name']}}<span class="bz">共{{$info['chapter_num']}}章</span></dt>
+        <dt class="name">{{$info['name']}}<span class="bz">共{{$info['chapter_num']}}{{ trans('novel.chapter')}}</span></dt>
         <dt><span>{{ trans('novel.category')}}：</span>{{$category}}</dt>
         <dt><span>{{ trans('novel.author')}}：</span>{{$info->author}} </dt>
         <dt><span>{{ trans('novel.status')}}：</span>{{$speed}}</dt>
@@ -17,29 +17,17 @@
     <div class="bt-r">
       <p>
       <div style="text-align:center;">
-            <table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-                <tr align="center">
-                  <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('novel.ads')}}</td>
-                </tr>
-            </table>
+            <img src="/images/novel-right.png">
       </div>
       </p>
     </div>
   </div>
 
 <div class="pcd_ad" style="margin-bottom: 10px;">
-    <table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-        <tr align="center">
-          <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.pcads')}}</td>
-        </tr>
-    </table>
+    <img src="/images/ads-home.png">
 </div>
 <div class="mbd_ad"  style="margin-bottom: 10px;">
-    <table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-        <tr align="center">
-          <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.mobielads')}}<</td>
-        </tr>
-    </table>
+    <img src="/images/ads-mobil.png" width="100%">
 </div>
 
 <div class="tab-down mb clearfix">

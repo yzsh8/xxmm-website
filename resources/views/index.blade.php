@@ -45,7 +45,7 @@
     </ul>
     <ul class="channel-silder-nav">
       @foreach ($banner as $v)
-          <li><a target="_blank" href="/dy/aqp/1100.html" ><img class="lazy" data-original="{{get_web_url($v->thumb)}}" src="/skin/ecms106/images/load.gif" alt="{{$v->name}}"></a></li>
+          <li><a target="_blank" href="/movie/show/{{$v->number}}" ><img class="lazy" data-original="{{get_web_url($v->thumb)}}" src="/skin/ecms106/images/load.gif" alt="{{$v->name}}"></a></li>
       @endforeach
     </ul>
   </div>
@@ -97,17 +97,12 @@
       </ul>
     </div>
   </div>
-<div class="pcd_ad"><table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-    <tr align="center">
-      <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.pcads')}}</td>
-    </tr>
-  </table></div>
+<div class="pcd_ad">
+    <img src="/images/ads-home.png">
+</div>
 
-<div class="mbd_ad"><table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-    <tr align="center">
-      <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.mobielads')}}</td>
-    </tr>
-  </table>
+<div class="mbd_ad">
+    <img src="/images/ads-mobil.png" width="100%">
 </div> 
 
 
@@ -141,17 +136,12 @@
 </div>
 
 
-<div class="pcd_ad"><table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-    <tr align="center">
-      <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.pcads')}}</td>
-    </tr>
-  </table></div>
+<div class="pcd_ad">
+    <img src="/images/ads-home.png">
+</div>
 
-<div class="mbd_ad"><table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-    <tr align="center">
-      <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.mobielads')}}</td>
-    </tr>
-  </table>
+<div class="mbd_ad">
+    <img src="/images/ads-mobil.png" width="100%">
 </div>     
 
 <div class="index-area clearfix">
