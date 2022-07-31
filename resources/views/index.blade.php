@@ -98,13 +98,21 @@
     </div>
   </div>
 
-<!--<div class="pcd_ad">
-    <img src="/images/ads-home.png">
+<div class="pcd_ad">
+  @if (app()->getLocale()=='en')
+    <img src="/images/ads-home-en.gif" width="100%" />
+  @else
+    <img src="/images/ads-home-cn.gif" width="100%" />
+  @endif
 </div>
 
 <div class="mbd_ad">
-    <img src="/images/ads-mobil.png" width="100%">
-</div>--> 
+  @if (app()->getLocale()=='en')
+    <img src="/images/ads-mobil-en.gif" width="100%" width="100%" />
+  @else
+    <img src="/images/ads-mobil-cn.gif" width="100%" width="100%" />
+  @endif
+</div>
 
 
 <div class="index-area clearfix">
@@ -137,13 +145,21 @@
 </div>
 
 
-<!--<div class="pcd_ad">
-    <img src="/images/ads-home.png">
+<div class="pcd_ad">
+  @if (app()->getLocale()=='en')
+    <img src="/images/ads-home-en.gif" width="100%" />
+  @else
+    <img src="/images/ads-home-cn.gif" width="100%" />
+  @endif
 </div>
 
 <div class="mbd_ad">
-    <img src="/images/ads-mobil.png" width="100%">
-</div>-->     
+  @if (app()->getLocale()=='en')
+    <img src="/images/ads-mobil-en.gif" width="100%" />
+  @else
+    <img src="/images/ads-mobil-cn.gif" width="100%" />
+  @endif
+</div>    
 
 <div class="index-area clearfix">
     <h1 class="title index-color"><span class="hitkey kp"><a href="/novel">{{ trans('website.more')}}»</a></span> <a href="/novel">{{ trans('menu.novel')}}</a></h1>

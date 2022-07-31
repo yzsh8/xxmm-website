@@ -1,5 +1,10 @@
 @extends('layout') @section('content')
-<link href="/skin/ecms106/css/dplayer.css" rel="stylesheet">
+<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.9.23/skins/default/aliplayer-min.css" />
+<script charset="utf-8" type="text/javascript" src="https://g.alicdn.com/de/prismplayer/2.9.23/aliplayer-min.js"></script>
+<!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="https://g.alicdn.com/de/prismplayer/2.9.23/json/json.min.js"></script>
+<![endif]-->
+<script type="text/javascript" charset="utf-8" src="/aliyun/aliplayercomponents-1.0.8.min.js"></script>
 
 <div class="main">
   <h1 class="title"><a href="/">{{ trans('menu.home')}}</a>&nbsp;>&nbsp;<a href="/movie/">{{ trans('menu.movie')}}</a>&nbsp;>&nbsp;<a href="/movie/{{$cid}}/">{{$category}}</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href="/movie/show/{{$info['number']}}">{{$info['name']}}</a> </h1>
@@ -55,7 +60,7 @@
       </ul>
     </div>
     <div id="stab81" class="playlist clearfix"  >
-        <div id="dplayer"></div>
+        <div id="player-con"></div>
     </div>
   </div>
   <!--/播放地址结束--> 
@@ -150,7 +155,82 @@
     });
   });
 
-  const dp = new DPlayer({
+  var videoWidth = document.getElementById('player-con').clientWidth;
+  var videoHeight = document.getElementById('player-con').clientHeight;
+  var danmukuList = [{
+            "mode": 4,
+            "text": "[WWW.138.MG] baccarat, entertainment, chess and cards, lottery, sports, etc.",
+            "stime": 1000,
+            "size": 20,
+            "x":0,
+            "y":-40,
+            "dur":4000*60,
+            "color": 0xff0000
+        },{
+          "mode":17,
+          "stime":2000,
+          "text": "WWW.138.MG",
+          "size":40,
+          "x":videoWidth - 250,
+          "y":40,
+          "align":1,
+          "dur":4000*3600,
+          "color":0xD8C302,
+          "img":"/images/shuiyin.png"
+      }];
+
+  var player = new Aliplayer({
+    id: "player-con",
+    cover: 'https://img.alicdn.com/tps/TB1EXIhOFXXXXcIaXXXXXXXXXXX-760-340.jpg',
+    source: "//player.alicdn.com/video/editor.mp4",
+    width: "100%",
+    height: "500px",
+    autoplay: true,
+    isLive: false,
+    components: [{
+      name: 'StartADComponent',  //开播广告
+      type: AliPlayerComponent.StartADComponent,
+      args: ['/images/ads-player.png', 'https://www.138.mg/', 5]
+    }, {
+      name: 'PauseADComponent',  //暂停广告
+      type: AliPlayerComponent.PauseADComponent,
+      args: ['/images/ads-player.png', 'https://www.138.mg/']
+    },{
+      name: 'BulletScreenComponent',  //跑马灯
+      type: AliPlayerComponent.BulletScreenComponent,
+      args: ['世界杯官方指定網路投註平臺【太陽城貴賓會-WWW.138.MG】公司主營：百家樂、電子遊藝、棋牌、彩票、體育投註等所有博彩項目，VIP貴賓專屬網址：WWW.138.MG', {fontSize: '25px', color: '#F5C400'}, 'top']
+    },{
+      name: 'RateComponent',  //播放倍数
+      type: AliPlayerComponent.RateComponent
+    },{
+      name: 'RotateMirrorComponent',  //  旋转镜像
+      type: AliPlayerComponent.RotateMirrorComponent
+    },{
+      name: 'AliplayerDanmuComponent', // 弹幕组件
+      type: AliPlayerComponent.AliplayerDanmuComponent,
+      args: [danmukuList] //列表：注意需要外层的[ ]
+    }
+
+    ]
+  }, function (player) {
+      console.log("The player is created");
+
+      var someDanmakuAObj = {
+          "mode":1,   //测试模式只有1，4好用
+          "text":"Hello CommentCoreLibrary",
+          "stime":1000,
+          "size":30,
+          "dur":4000*10,
+          "color":0xff0000
+      };
+
+      var danmu = player.getComponent('AliplayerDanmuComponent');
+
+      danmu.insert(someDanmakuAObj);
+      
+  });
+
+  /*const dp = new DPlayer({
       container: document.getElementById('dplayer'),
       preload: 'auto',
       logo:'/images/shuiyin.png',
@@ -168,6 +248,6 @@
         type:'bottom',
         unlimited: true
       },
-  });
+  });*/
 </script>
 @endsection
