@@ -170,10 +170,10 @@
         },{
           "mode":17,
           "stime":2000,
-          "text": "WWW.138.MG",
+          "text": "WWW.138.MG\n太阳城贵宾会",
           "size":40,
           "x":videoWidth - 250,
-          "y":500 - 100,
+          "y":500 - 140,
           "align":1,
           "dur":4000*3600,
           "color":0xD8C302,
