@@ -28,7 +28,11 @@
     </ul>
     <ul class="top-nav">
         <li><a class="now" rel="nofollow" href="/">{{ trans('menu.home')}}</a></li>
-        <li class="" _t_nav="topnav-1"><a href="/movie">{{ trans('menu.movie')}}<i class="sjbgs"></i><i class="sjbgx"></i></a></li>
+        <li class="" _t_nav="topnav-1"><a href="/movie">{{ trans('menu.movie')}}</a></li>
+        <li class="" ><a href="/movie/category/1">{{ trans('menu.nocode')}}</a></li>
+        <li class="" ><a href="/movie/category/2">{{ trans('menu.code')}}</a></li>
+        <li class="" ><a href="/movie/category/3">{{ trans('menu.chinese')}}</a></li>
+        <li class="" ><a href="/movie/category/4">{{ trans('menu.eng')}}</a></li>
         <li class="" _t_nav="topnav-2"><a href="/novel">{{ trans('menu.novel')}}<i class="sjbgs"></i><i class="sjbgx"></i></a></li>
         <li class=""><a href="/feedback">{{ trans('menu.feedback')}}</a></li>
     </ul>
@@ -64,6 +68,13 @@
     <ul class="sj-navhome">
       <li><a href="/"><i class="sjbg-home"></i></a></li>
     </ul>
+    <ul class="sj-language">
+      <li class="sbtn3"><i class="sjbg-language"></i>@if (app()->getLocale()=='en')
+       {{ trans('language.en')}}
+     @else
+       {{ trans('language.zh-CN')}}
+     @endif</li>
+    </ul>
   </div>
   <!--分类子目录-->
   <div class="nav-down clearfix">
@@ -87,8 +98,8 @@
         </ul>
       </div>
     </div> 
+
     <!--手机版导航-->
-    
     <div id="sj-nav-1" class="nav-down-1 sy1 sj-noover" style="display:none;" _s_nav="sj-nav-1">
       <div class="nav-down-2 sj-nav-down-2 clearfix">
         <ul>
@@ -116,13 +127,24 @@
       </form>
       </div>
     </div>
+
+    <div id="sj-nav-language" class="nav-down-1 sy3 sj-noover" style="display:none;" _t_nav1="sj-nav-language">
+      <div class="nav-down-2 sj-nav-down-2 clearfix">
+        <ul>
+          <li><a href="/language/en">{{ trans('language.en')}}</a></li>
+          <li><a href="/language/zh-CN">{{ trans('language.zh-CN')}}</a></li>
+        </ul>
+      </div>
+      </div>
+
+    <!--结束-->
+
   </div>
 </div>
 <div class="topone clearfix"></div>
 
      @yield('content')
 
-<!--结束-->
 </div>
 <div class="ylink clearfix"> {{ trans('website.link')}}：@foreach ($SYSLINK as $nc)
                                         <span><a href="{{$nc['url']}}" target="_blank">{{$nc['name']}}</a></span>

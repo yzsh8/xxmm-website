@@ -353,7 +353,7 @@ function checkInput(str,type){
 			if(!/^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/gi.test(str)){alert('閭濉啓閿欒');return false;}
 			break;
 		case "num" :
-			if(isNaN(str)){alert('QQ濉啓閿欒');return false;}
+			if(isNaN(str)){alert('input number please');return false;}
 			break;
 	}
 	return true;
@@ -363,9 +363,9 @@ function copyToClipboard(txt) {
 	if(window.clipboardData){    
 		window.clipboardData.clearData();    
 		window.clipboardData.setData("Text", txt);
-		alert('澶嶅埗鎴愬姛锛�')
+		alert('copy done')
 	}else{
-		alert('璇锋墜鍔ㄥ鍒讹紒')	
+		alert('copy error')	
 	}   
 }
 function   getUrlArgs()   
@@ -459,6 +459,17 @@ $(function(){
         else{
         	$(".sy2").show();
             $(".sbtn2").addClass("cur");
+        }
+    })
+    $(".sbtn3").click(function(){
+        if($(this).hasClass("cur"))
+        {
+            $(".sbtn3").removeClass("cur");
+            $(".sy3").hide();
+        }
+        else{
+        	$(".sy3").show();
+            $(".sbtn3").addClass("cur");
         }
     })
 });
