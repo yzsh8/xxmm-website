@@ -156,7 +156,8 @@
   });
 
   var videoWidth = document.getElementById('player-con').clientWidth;
-  var videoHeight = document.getElementById('player-con').clientHeight;
+  var videoHeight = document.getElementById('player-con').scrollHeight  ;
+
   var danmukuList = [{
             "mode": 4,
             "text": "[WWW.138.MG] baccarat, entertainment, chess and cards, lottery, sports, etc.",
@@ -172,7 +173,7 @@
           "text": "WWW.138.MG",
           "size":40,
           "x":videoWidth - 250,
-          "y":40,
+          "y":500 - 100,
           "align":1,
           "dur":4000*3600,
           "color":0xD8C302,
