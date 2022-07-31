@@ -181,11 +181,11 @@
 
   var player = new Aliplayer({
     id: "player-con",
-    cover: 'https://img.alicdn.com/tps/TB1EXIhOFXXXXcIaXXXXXXXXXXX-760-340.jpg',
-    source: "//player.alicdn.com/video/editor.mp4",
+    cover: '{{get_web_url($info->avatar)}}',
+    source: "{{$info['video']}}",
     width: "100%",
     height: "500px",
-    autoplay: true,
+    autoplay: false,
     isLive: false,
     components: [{
       name: 'StartADComponent',  //开播广告
