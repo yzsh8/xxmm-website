@@ -36,12 +36,21 @@
     </div>
   </div>
 
-<!--<div class="pcd_ad" style="margin-bottom: 10px;">
-    <img src="/images/ads-home.png">
-</div>
-<div class="mbd_ad"  style="margin-bottom: 10px;">
-    <img src="/images/ads-mobil.png" width="100%">
-</div>-->
+  <div class="pcd_ad" style="margin-bottom: 10px;">
+    @if (app()->getLocale()=='en')
+      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-play-en.gif" width="100%" /></a>
+    @else
+      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-play-cn.gif" width="100%" /></a>
+    @endif
+  </div>
+
+  <div class="mbd_ad">
+    @if (app()->getLocale()=='en')
+      <a href="https://www.138.mg/"><img src="/images/ads-mobil-play-en.gif" width="100%" width="100%" /></a>
+    @else
+      <a href="https://www.138.mg/"><img src="/images/ads-mobil-play-cn.gif" width="100%" width="100%" /></a>
+    @endif
+  </div>
 
   <div class="tab-title tab mb clearfix">
     <ul>
@@ -112,13 +121,21 @@
     </div>
   </div>
 
+  <div class="pcd_ad" style="margin-bottom: 10px;">
+    @if (app()->getLocale()=='en')
+      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-play-en.gif" width="100%" /></a>
+    @else
+      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-play-cn.gif" width="100%" /></a>
+    @endif
+  </div>
 
-<!--<div class="pcd_ad">
-    <img src="/images/ads-home.png">
-</div>
-<div class="mbd_ad">
-    <img src="/images/ads-mobil.png" width="100%">
-</div>--> 
+  <div class="mbd_ad">
+    @if (app()->getLocale()=='en')
+      <a href="https://www.138.mg/"><img src="/images/ads-mobil-play-en.gif" width="100%" width="100%" /></a>
+    @else
+      <a href="https://www.138.mg/"><img src="/images/ads-mobil-play-cn.gif" width="100%" width="100%" /></a>
+    @endif
+  </div>
 
   <div class="index-area clearfix" >
     <h4 class="title index-color">{{ trans('movie.youlike')}}</h4>
@@ -159,19 +176,10 @@
   var videoHeight = document.getElementById('player-con').scrollHeight  ;
 
   var danmukuList = [{
-            "mode": 4,
-            "text": "[WWW.138.MG] baccarat, entertainment, chess and cards, lottery, sports, etc.",
-            "stime": 1000,
-            "size": 20,
-            "x":0,
-            "y":-40,
-            "dur":4000*60,
-            "color": 0xff0000
-        },{
           "mode":17,
           "stime":2000,
           "text": "WWW.138.MG\n太阳城贵宾会",
-          "size":40,
+          "size":30,
           "x":videoWidth - 250,
           "y":500 - 140,
           "align":1,
@@ -199,7 +207,7 @@
     },{
       name: 'BulletScreenComponent',  //跑马灯
       type: AliPlayerComponent.BulletScreenComponent,
-      args: ['世界杯官方指定網路投註平臺【太陽城貴賓會-WWW.138.MG】公司主營：百家樂、電子遊藝、棋牌、彩票、體育投註等所有博彩項目，VIP貴賓專屬網址：WWW.138.MG', {fontSize: '25px', color: '#F5C400'}, 'top']
+      args: ['世界杯官方指定網路投註平臺【太陽城貴賓會-WWW.138.MG】公司主營：百家樂、電子遊藝、棋牌、彩票、體育投註等所有博彩項目，VIP貴賓專屬網址：WWW.138.MG。\n \n [WWW.138.MG] Lucky guests, electronic, chess and cards, fishing, live broadcast licensing, 13-year-old brand, registered 38, the first deposit of 38 get 1888, the newcomer subsidy is as high as 20%.', {fontSize: '20px', color: '#F5C400'}, 'top']
     },{
       name: 'RateComponent',  //播放倍数
       type: AliPlayerComponent.RateComponent
@@ -216,18 +224,16 @@
   }, function (player) {
       console.log("The player is created");
 
-      var someDanmakuAObj = {
+      var danmu = player.getComponent('AliplayerDanmuComponent');
+
+      danmu.insert({
           "mode":1,   //测试模式只有1，4好用
           "text":"Hello CommentCoreLibrary",
           "stime":1000,
           "size":30,
           "dur":4000*10,
           "color":0xff0000
-      };
-
-      var danmu = player.getComponent('AliplayerDanmuComponent');
-
-      danmu.insert(someDanmakuAObj);
+      });
       
   });
 

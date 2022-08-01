@@ -68,17 +68,17 @@
 
   <div class="pcd_ad">
     @if (app()->getLocale()=='en')
-      <img src="/images/ads-home-en.gif" width="100%" />
+      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-home-en.gif" width="100%" /></a>
     @else
-      <img src="/images/ads-home-cn.gif" width="100%" />
+      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-home-cn.gif" width="100%" /></a>
     @endif
   </div>
 
   <div class="mbd_ad">
     @if (app()->getLocale()=='en')
-      <img src="/images/ads-mobil-en.gif" width="100%" />
+      <a href="https://www.138.mg/"><img src="/images/ads-mobil-en.gif" width="100%" /></a>
     @else
-      <img src="/images/ads-mobil-cn.gif" width="100%" />
+      <a href="https://www.138.mg/"><img src="/images/ads-mobil-cn.gif" width="100%" /></a>
     @endif
   </div> 
 
@@ -119,17 +119,17 @@
 
 <div class="pcd_ad">
   @if (app()->getLocale()=='en')
-    <img src="/images/ads-home-en.gif" width="100%" />
+    <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-home-en.gif" width="100%" /></a>
   @else
-    <img src="/images/ads-home-cn.gif" width="100%" />
+    <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-home-cn.gif" width="100%" /></a>
   @endif
 </div>
 
 <div class="mbd_ad">
   @if (app()->getLocale()=='en')
-    <img src="/images/ads-mobil-en.gif" width="100%" width="100%" />
+    <a href="https://www.138.mg/"><img src="/images/ads-mobil-en.gif" width="100%" width="100%" /></a>
   @else
-    <img src="/images/ads-mobil-cn.gif" width="100%" width="100%" />
+    <a href="https://www.138.mg/"><img src="/images/ads-mobil-cn.gif" width="100%" width="100%" /></a>
   @endif
 </div>
 

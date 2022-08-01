@@ -45,9 +45,6 @@
       </form>
     </ul>
     <ul class="nav-qt aa">
-      <li class="bb">
-	  <a href="#" onclick="window.external.AddFavorite(&quot;/&quot;,&quot;{{ trans('website.title')}}&quot;)"><i class="jl"></i>{{ trans('website.favorite')}}</a>
-      </li>
       <li class="bb member"><strong class="ma"><i class="mbbg"></i>@if (app()->getLocale()=='en')
        {{ trans('language.en')}}
      @else
