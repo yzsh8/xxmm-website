@@ -207,7 +207,7 @@
     },{
       name: 'BulletScreenComponent',  //跑马灯
       type: AliPlayerComponent.BulletScreenComponent,
-      args: ['世界杯官方指定網路投註平臺【太陽城貴賓會-WWW.138.MG】公司主營：百家樂、電子遊藝、棋牌、彩票、體育投註等所有博彩項目，VIP貴賓專屬網址：WWW.138.MG。\n \n [WWW.138.MG] Lucky guests, electronic, chess and cards, fishing, live broadcast licensing, 13-year-old brand, registered 38, the first deposit of 38 get 1888, the newcomer subsidy is as high as 20%.', {fontSize: '20px', color: '#F5C400'}, 'top']
+      args: ['世界杯官方指定網路投註平臺【太陽城貴賓會-WWW.138.MG】公司主營：百家樂、電子遊藝、棋牌、彩票、體育投註等所有博彩項目，VIP貴賓專屬網址：WWW.138.MG。\n \n Online Casino [Sun City VIP Club] We are a reputable company with 15 years of history, where you can play all kinds of games just like Macau! Exclusive entrance for VIP guests WWW.138.MG.', {fontSize: '20px', color: '#F5C400'}, 'top']
     },{
       name: 'RateComponent',  //播放倍数
       type: AliPlayerComponent.RateComponent
