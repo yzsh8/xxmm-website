@@ -90,7 +90,7 @@
       <div class="nav-down-2 clearfix">
         <ul>
           @foreach ($SYSNC as $nc)
-          <li><a href="/novel/category/{{$nc['id']}}">{{$nc['name']}}</a></li>
+          <li><a href="/novel/category/{{$nc['id']}}">{{ trans('novel.c-'.$nc['id'])}}</a></li>
           @endforeach
         </ul>
       </div>
@@ -110,7 +110,7 @@
       <div class="nav-down-2 sj-nav-down-2 clearfix">
         <ul>
           @foreach ($SYSNC as $nc)
-          <li><a href="/novel/category/{{$nc['id']}}">{{$nc['name']}}</a></li>
+          <li><a href="/novel/category/{{$nc['id']}}">{{ trans('novel.c-'.$nc['id'])}}</a></li>
           @endforeach     
         </ul>
       </div>

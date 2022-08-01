@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\NovelCategory;
 use App\Models\Links;
+use Illuminate\Support\Facades\Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,11 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //------分享公共数据
-
         //小说分类
         $novelCategory = NovelCategory::select('id','name')->where('status',1)->get();
-
         //友情链接
         $linkLists = Links::GetLists();
 

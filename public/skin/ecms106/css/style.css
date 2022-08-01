@@ -965,10 +965,11 @@ width:320px
 .sj-nav-down-2 li a {
 	margin:0 auto;
 	padding:5px 0;
-	width:90%;
+	width:87px;
 	border-radius:10px;
 	background-color:#E0E1E5;
-	font-size:14px
+	font-size:12px;
+	overflow:hidden;
 }
 .sj-nav-down-2 li a.on, .sj-nav-down-2 li a:hover {
 	background:#999;
