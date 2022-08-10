@@ -34,16 +34,16 @@ if (! function_exists('get_video_url')) {
         //针对不同的电影的解析
         switch ($serv) {
             case 'movie1':
-                $path = "http://mv1.xxmm.com/".$base;
+                $path = "//mv1.xxmm.com/".$base;
                 break;
             case 'movie242':
-                $path = "http://mv2.xxmmww.com/".$base;
+                $path = "//mv2.xxmmww.com/".$base;
                 break;
             case 'movie210':
-                $path = "http://mv3.xxmmww.com/".$base;
+                $path = "//mv3.xxmmww.com/".$base;
                 break;
             case 'movie98':
-                $path = "http://mv4.xxmmww.com/".$base;
+                $path = "//mv4.xxmmww.com/".$base;
                 break;
         }
 
