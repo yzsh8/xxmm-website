@@ -80,7 +80,7 @@ class Movie extends Model
         $lists = Redis::Smembers($cacheKey);
         if(!$lists){
 
-            $movie = self::select('id','name','cid','issued','number','publish_time','duration','thumb','updated_at')->where('status',1)->where('is_up',1)->orderby('link_time','desc')->limit($limit)->get();
+            $movie = self::select('id','name','cid','issued','number','publish_time','duration','thumb','updated_at')->where('status',1)->where('is_up',1)->where('mv_down',2)->orderby('link_time','desc')->limit($limit)->get();
 
             //数据写入redis
             foreach($movie as $k=>$v)
@@ -109,7 +109,7 @@ class Movie extends Model
         $lists = Redis::Smembers($cacheKey);
         if(!$lists){
 
-            $movie = self::select('id','name','cid','issued','number','publish_time','duration','view_num','thumb','updated_at')->where('status',1)->where('is_hot',1)->orderby('view_num','desc')->limit($limit)->get();
+            $movie = self::select('id','name','cid','issued','number','publish_time','duration','view_num','thumb','updated_at')->where('status',1)->where('is_hot',1)->where('mv_down',2)->orderby('view_num','desc')->limit($limit)->get();
 
             //数据写入redis
             foreach($movie as $k=>$v)

@@ -191,7 +191,7 @@
   var player = new Aliplayer({
     id: "player-con",
     cover: '{{get_web_url($info->avatar)}}',
-    source: "{{$info['video']}}",
+    source: "{{get_video_url($info['video'])}}",
     width: "100%",
     height: "500px",
     autoplay: false,
@@ -236,25 +236,5 @@
       });
       
   });
-
-  /*const dp = new DPlayer({
-      container: document.getElementById('dplayer'),
-      preload: 'auto',
-      logo:'/images/shuiyin.png',
-      danmaku: true,
-      video: {
-          url: '{{$info['video']}}',
-          pic: '{{get_web_url($info->avatar)}}',
-      },
-      danmaku: {
-        id: '9E2E3368B4',
-        api: '/api/notice?',
-        token: 'token',
-        maximum: 1000,
-        user: 'DIYgod',
-        type:'bottom',
-        unlimited: true
-      },
-  });*/
 </script>
 @endsection
