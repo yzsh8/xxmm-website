@@ -144,7 +144,7 @@ class Movie extends Model
         $offset = ($page-1)*$limit;
 
         //优先读取redis
-        $lists = DB::select("select id,name,cid,director_id,series_id,film_id,issued,number,publish_time,duration,thumb,avatar,updated_at from movie where $where status=1 and is_up=1 order by $sort desc limit $offset,$limit");
+        $lists = DB::select("select id,name,cid,director_id,series_id,film_id,issued,number,publish_time,duration,thumb,avatar,updated_at from movie where $where status=1 and is_up=1 order by mv_down desc, $sort desc limit $offset,$limit");
         if(!$lists){
             return [];
         }
