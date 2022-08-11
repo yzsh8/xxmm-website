@@ -15,7 +15,7 @@ return [
     'news'  => '最新片源',
     'hots'  => '点击排行榜',
     'sort-new'  => '最新',
-    'sort-view'  => '最新',
+    'sort-view'  => '最热',
     'score' =>  '评分',
     'view'  =>  '查看',
     'online'=> '在线播放',
