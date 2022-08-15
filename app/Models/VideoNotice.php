@@ -21,7 +21,7 @@ class VideoNotice extends Model
         }
 
         //从数据库读取数据
-        $lists = self::select('id','name','size','stime','color')->where('status',1)->get();
+        $lists = self::select('id','name','size','stime','color','dur')->where('status',1)->get();
 
         //写入redis
         Redis::set($cacheKey,json_encode($lists));

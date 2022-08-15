@@ -56,3 +56,34 @@ if (!function_exists('objectToArray')) {
         return json_decode(json_encode($object), true);
     }
 }
+
+if (!function_exists('colorToCode')) {
+    function colorToCode($color) {
+        $code = '';
+        switch($color){
+        case 'red':
+            $code = 'FF0000';
+            break;
+        case 'black':
+            $code = '000000';
+            break;
+        case 'green':
+            $code = '00FF00';
+            break;
+        case 'silver':
+            $code = 'C0C0C0';
+            break;
+        case 'white':
+            $code = 'FFFFFF';
+            break;
+        case 'yellow':
+            $code = 'FFFF00';
+            break;
+        case 'blue':
+            $code = '00FF00';
+            break;
+        }
+
+        return $code;
+    }
+}

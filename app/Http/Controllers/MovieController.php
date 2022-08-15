@@ -14,6 +14,7 @@ use App\Models\MovieActor;
 use App\Models\MovieLabel;
 use App\Models\Movie;
 use App\Models\VideoNotice;
+use App\Models\Page;
 use Illuminate\Support\Facades\Redis;
 
 class MovieController extends Controller
@@ -108,6 +109,10 @@ class MovieController extends Controller
 		//读取视频播放器定义的滚动字幕
 		$videoNotice = VideoNotice::GetLists();
 
+		//跑马灯
+		$pmdCN	=	Page::select('content')->where('status',1)->where('id',5)->first();
+		$pmdEN	=	Page::select('content')->where('status',1)->where('id',6)->first();
+
 		$cid 	=	$info['cid'];
 		return view('movie_show',[
 			'info'		=> 	$info,		//数据
@@ -120,6 +125,9 @@ class MovieController extends Controller
 			'pic'		=>	$pic,
 			'related'	=> 	$related,
 			'notice'	=>	$videoNotice,
+			'v_cn'		=>	isset($pmdCN['content'])?$pmdCN['content']:'',
+			'v_en'		=>	isset($pmdEN['content'])?$pmdEN['content']:'',
+
 		]);
 
 	}

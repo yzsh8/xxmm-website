@@ -97,7 +97,7 @@
                     <p class="name">{{$v->name}}</p>
                     <p class="actor">{{$v->number}}</p>
                     <p class="actor">{{$v->category}}</p>
-                    <p class="actor">{{ intval((int)$v->publish_time/60) }}{{ trans('movie.minute')}}</p>
+                    <p class="actor">{{ intval((int)$v->duration/60) }}{{ trans('movie.minute')}}</p>
                 </span>
               </a> 
           </li>
@@ -154,7 +154,7 @@
                       <p class="name">{{$v->name}}</p>
                       <p class="actor">{{$v->number}}</p>
                       <p class="actor">{{$v->category}}</p>
-                      <p class="actor">{{ intval((int)$v->publish_time/60) }}{{ trans('movie.minute')}}</p>
+                      <p class="actor">{{ intval((int)$v->duration/60) }}{{ trans('movie.minute')}}</p>
                   </span>
                 <p class="other"></p>
             </a> 

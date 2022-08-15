@@ -62,7 +62,6 @@
   
   <!--/播放地址-->
   <div id="stab1" class="tab-down mb clearfix">
-    <script type="text/javascript" src="/dist/DPlayer.min.js"></script>
     <div class="playfrom tab8 clearfix">
       <ul>
         <li id="tab81" onClick="setTab('tab8','stab8',1,1)"  class="on" ><i class="playerico ico-Azhan"></i> {{ trans('movie.play')}}</li>
@@ -207,7 +206,7 @@
     },{
       name: 'BulletScreenComponent',  //跑马灯
       type: AliPlayerComponent.BulletScreenComponent,
-      args: ['世界杯官方指定網路投註平臺【太陽城貴賓會-WWW.138.MG】公司主營：百家樂、電子遊藝、棋牌、彩票、體育投註等所有博彩項目，VIP貴賓專屬網址：WWW.138.MG。\n \n Online Casino [Sun City VIP Club] We are a reputable company with 15 years of history, where you can play all kinds of games just like Macau! Exclusive entrance for VIP guests WWW.138.MG.', {fontSize: '20px', color: '#F5C400'}, 'top']
+      args: ['{{$v_cn}}\n \n {{$v_en}}', {fontSize: '20px', color: '#F5C400'}, 'top']
     },{
       name: 'RateComponent',  //播放倍数
       type: AliPlayerComponent.RateComponent
@@ -226,15 +225,16 @@
 
       var danmu = player.getComponent('AliplayerDanmuComponent');
 
-      danmu.insert({
+      @foreach ($notice as $v)
+danmu.insert({
           "mode":1,   //测试模式只有1，4好用
-          "text":"Hello CommentCoreLibrary",
-          "stime":1000,
-          "size":30,
-          "dur":4000*10,
-          "color":0xff0000
+          "text":"{{$v['name']}}",
+          "stime":{{$v['stime']}}*1000,
+          "size":{{$v['size']}},
+          "dur":{{$v['dur']}}*1000,
+          "color":0x{{colorToCode($v['color'])}}
       });
-      
+      @endforeach      
   });
 </script>
 @endsection

@@ -152,7 +152,7 @@
 <div class="footer clearfix">
   <p><a href="/page/1">{{ trans('menu.aboutus')}}</a> <a href="/page/2">{{ trans('menu.privacy')}}</a> <a href="/page/3">{{ trans('menu.magnet')}}</a> <a href="/page/4">{{ trans('menu.contact')}}</a> <a href="/feedback">{{ trans('menu.feedback')}}</a></p>
   <p>{{ trans('website.foot')}}</p>
-  Copyright &copy; 2002-{{ date('Y') }} [XXMM] ICP备12345678号  <!-----------本站统计结束---> 
+  Copyright &copy; 2002-{{ date('Y') }} [XXMM] ICP备12345678号 <script type="text/javascript" src="https://js.users.51.la/21285909.js"></script>
 </div>
 
 <div class="gotop"><a class="gotopbg" href="javascript:;" title="{{ trans('website.top')}}"></a></div>

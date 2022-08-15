@@ -235,6 +235,7 @@ class Movie extends Model
                               ->where('status',1)
                               ->where('is_up',1);
                     })
+                    ->orderby('mv_down','desc')
                     ->limit(12)
                     ->get();
 
