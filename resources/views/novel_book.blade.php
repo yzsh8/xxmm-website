@@ -17,7 +17,15 @@
     <div class="bt-r">
       <p>
       <div style="text-align:center;">
-            <img src="/images/novel-right.png">
+        @if (app()->getLocale()=='en')
+            @if(isset($ads['en']))
+              <a href="{{$ads['en']['url']}}" target="_blank"><img src="{{$ads['en']['pic']}}" width="{{$ads['width']}}" height="{{$ads['height']}}"></a>
+            @endif
+        @else
+            @if(isset($ads['cn']))
+              <a href="{{$ads['cn']['url']}}" target="_blank"><img src="{{$ads['cn']['pic']}}" width="{{$ads['width']}}" height="{{$ads['height']}}"></a>
+            @endif
+        @endif
       </div>
       </p>
     </div>

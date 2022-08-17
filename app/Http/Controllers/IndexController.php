@@ -13,6 +13,7 @@ use App\Models\MovieFilm;
 use App\Models\Movie;
 use App\Models\NovelBook;
 use App\Models\NovelCategory;
+use App\Models\Ads;
 
 class IndexController extends Controller
 {
@@ -62,13 +63,19 @@ class IndexController extends Controller
 			$novelBook[$k] = $v;
 		}
 
+		//读取广告
+		$adsBanner  = Ads::Gets('home-banner');
+		$adsActive  = Ads::Gets('home-active');
+
 		return view('index',[
 			'banner'	=>	$banner,
 			'links'		=> 	$links,
 			'maxview'	=> 	$maxViews,
 			'novelbook'	=> 	$novelBook,
 			'mc' 		=> 	$movieCategory,
-			'ml'		=> 	$movieLists
+			'ml'		=> 	$movieLists,
+			'adsbanner'	=>	$adsBanner,
+			'adsactive'	=>	$adsActive,
 		]);
 	}
 	

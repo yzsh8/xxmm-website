@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redis;
 use App\Models\NovelBook;
 use App\Models\NovelCategory;
 use App\Models\NovelChapter;
+use App\Models\Ads;
 
 class NovelController extends Controller
 {
@@ -61,6 +62,9 @@ class NovelController extends Controller
 		//计算总数
 		$total = NovelBook::GetTotal($cid);
 
+		//读取广告
+		$ads  = Ads::Gets('novel-list');
+
 		return view('novel_list',[
 			'ml'		=> 	$lists,				//数据列表
 			'total'   	=>  $total,				//总记录数
@@ -69,6 +73,7 @@ class NovelController extends Controller
 			'category'	=>	NovelCategory::GetNameForId($cid),
 			'page'		=>	$page,				//当前页
 			'sort'		=> 	$sort,				//排序
+			'ads'		=>	$ads,
 		]);
 	}
 
@@ -117,6 +122,10 @@ class NovelController extends Controller
 		$lists = NovelChapter::select('id','name','created_at')->where('status',1)->where('bid',$id)->orderby('id',$orderby[$sort])->paginate($limit);
 
 		$cid 	=	$info['cid'];
+
+		//读取广告
+		$ads  = Ads::Gets('novel-book');
+
 		return view('novel_book',[
 			'info'		=> 	$info,		//数据
 			'cid'		=>	$cid,		//分类
@@ -127,6 +136,7 @@ class NovelController extends Controller
 			'limit'		=>	$limit,
 			'page'		=>	$page,
 			'sort'		=>	$sort,
+			'ads'		=>	$ads,
 		]);
 	}
 

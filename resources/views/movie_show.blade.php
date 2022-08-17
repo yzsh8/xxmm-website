@@ -19,7 +19,7 @@
         <dt><span>{{ trans('movie.issued')}}：</span>{{$info['issued']}} </dt>
         <dt><span>{{ trans('movie.director')}}：</span>{{$info['director']}}</dt>
         <dt><span>{{ trans('movie.release')}}：</span>{{$info['publish_time']}}</dt>
-        <dt><span>{{ trans('movie.footage')}}：</span>{{intval($info['duration']/60)}}{{ trans('movie.minute')}}</dt>
+        <dt><span>{{ trans('movie.footage')}}：</span>{{intval($info['duration']/3600)}}{{ trans('movie.minute')}}</dt>
         <dt><span>{{ trans('movie.score')}}：</span>{{$info['score']}}</dt>
         <dt><span>{{ trans('movie.view')}}：</span>{{$info['view_num']}}</dt>
       </dl>
@@ -36,21 +36,31 @@
     </div>
   </div>
 
-  <div class="pcd_ad" style="margin-bottom: 10px;">
-    @if (app()->getLocale()=='en')
-      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-play-en.gif" width="100%" /></a>
-    @else
-      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-play-cn.gif" width="100%" /></a>
+@if(@adstop)
+<div class="pcd_ad" style="margin-bottom: 10px;">
+  @if (app()->getLocale()=='en')
+    @if(isset($adstop['en']))
+    <a href="{{$adstop['en']['url']}}" target="_blank"><img src="{{$adstop['en']['pic']}}" width="100%" /></a>
     @endif
-  </div>
+  @else
+    @if(isset($adstop['cn']))
+    <a href="{{$adstop['cn']['url']}}" target="_blank"><img src="{{$adstop['cn']['pic']}}" width="100%" /></a>
+    @endif
+  @endif
+</div>
 
-  <div class="mbd_ad">
-    @if (app()->getLocale()=='en')
-      <a href="https://www.138.mg/"><img src="/images/ads-mobil-play-en.gif" width="100%" width="100%" /></a>
-    @else
-      <a href="https://www.138.mg/"><img src="/images/ads-mobil-play-cn.gif" width="100%" width="100%" /></a>
+<div class="mbd_ad">
+  @if (app()->getLocale()=='en')
+    @if(isset($adstop['en']))
+    <a href="{{$adstop['en']['url']}}"><img src="{{$adstop['en']['m_pic']}}" width="100%" width="100%" /></a>
     @endif
-  </div>
+  @else
+    @if(isset($adstop['cn']))
+    <a href="{{$adstop['cn']['url']}}"><img src="{{$adstop['cn']['m_pic']}}" width="100%" width="100%" /></a>
+    @endif
+  @endif
+</div>
+@endif
 
   <div class="tab-title tab mb clearfix">
     <ul>
@@ -120,21 +130,31 @@
     </div>
   </div>
 
-  <div class="pcd_ad" style="margin-bottom: 10px;">
-    @if (app()->getLocale()=='en')
-      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-play-en.gif" width="100%" /></a>
-    @else
-      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-play-cn.gif" width="100%" /></a>
+@if(@adsfoot)
+<div class="pcd_ad" style="margin-bottom: 10px;">
+  @if (app()->getLocale()=='en')
+    @if(isset($adsfoot['en']))
+    <a href="{{$adsfoot['en']['url']}}" target="_blank"><img src="{{$adsfoot['en']['pic']}}" width="100%" /></a>
     @endif
-  </div>
+  @else
+    @if(isset($adsfoot['cn']))
+    <a href="{{$adsfoot['cn']['url']}}" target="_blank"><img src="{{$adsfoot['cn']['pic']}}" width="100%" /></a>
+    @endif
+  @endif
+</div>
 
-  <div class="mbd_ad">
-    @if (app()->getLocale()=='en')
-      <a href="https://www.138.mg/"><img src="/images/ads-mobil-play-en.gif" width="100%" width="100%" /></a>
-    @else
-      <a href="https://www.138.mg/"><img src="/images/ads-mobil-play-cn.gif" width="100%" width="100%" /></a>
+<div class="mbd_ad">
+  @if (app()->getLocale()=='en')
+    @if(isset($adsfoot['en']))
+    <a href="{{$adsfoot['en']['url']}}"><img src="{{$adsfoot['en']['m_pic']}}" width="100%" width="100%" /></a>
     @endif
-  </div>
+  @else
+    @if(isset($adsfoot['cn']))
+    <a href="{{$adsfoot['cn']['url']}}"><img src="{{$adsfoot['cn']['m_pic']}}" width="100%" width="100%" /></a>
+    @endif
+  @endif
+</div>
+@endif
 
   <div class="index-area clearfix" >
     <h4 class="title index-color">{{ trans('movie.youlike')}}</h4>
@@ -148,7 +168,7 @@
                       <p class="name">{{$v->name}}</p>
                       <p class="actor">{{$v->number}}</p>
                       <p class="actor">{{$v->category}}</p>
-                      <p class="actor">{{ intval((int)$v->publish_time/60) }}{{ trans('movie.minute')}}</p>
+                      <p class="actor">{{ intval((int)$v->publish_time/3600) }}{{ trans('movie.minute')}}</p>
                   </span>
                 <p class="other"></p>
             </a> 

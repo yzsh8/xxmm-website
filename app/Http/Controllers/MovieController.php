@@ -15,6 +15,7 @@ use App\Models\MovieLabel;
 use App\Models\Movie;
 use App\Models\VideoNotice;
 use App\Models\Page;
+use App\Models\Ads;
 use Illuminate\Support\Facades\Redis;
 
 class MovieController extends Controller
@@ -113,6 +114,10 @@ class MovieController extends Controller
 		$pmdCN	=	Page::select('content')->where('status',1)->where('id',5)->first();
 		$pmdEN	=	Page::select('content')->where('status',1)->where('id',6)->first();
 
+		//读取广告
+		$adstop  = Ads::Gets('player-top');
+		$adsfoot  = Ads::Gets('player-foot');
+
 		$cid 	=	$info['cid'];
 		return view('movie_show',[
 			'info'		=> 	$info,		//数据
@@ -127,7 +132,8 @@ class MovieController extends Controller
 			'notice'	=>	$videoNotice,
 			'v_cn'		=>	isset($pmdCN['content'])?$pmdCN['content']:'',
 			'v_en'		=>	isset($pmdEN['content'])?$pmdEN['content']:'',
-
+			'adstop'	=>	$adstop,
+			'adsfoot'	=>	$adsfoot,
 		]);
 
 	}

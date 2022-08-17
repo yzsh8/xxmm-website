@@ -66,22 +66,31 @@
 
 <div class="main"> 
 
-  <div class="pcd_ad">
-    @if (app()->getLocale()=='en')
-      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-home-en.gif" width="100%" /></a>
-    @else
-      <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-home-cn.gif" width="100%" /></a>
+@if(@adsbanner)
+<div class="pcd_ad">
+  @if (app()->getLocale()=='en')
+    @if(isset($adsbanner['en']))
+    <a href="{{$adsbanner['en']['url']}}" target="_blank"><img src="{{$adsbanner['en']['pic']}}" width="100%" /></a>
     @endif
-  </div>
-
-  <div class="mbd_ad">
-    @if (app()->getLocale()=='en')
-      <a href="https://www.138.mg/"><img src="/images/ads-mobil-en.gif" width="100%" /></a>
-    @else
-      <a href="https://www.138.mg/"><img src="/images/ads-mobil-cn.gif" width="100%" /></a>
+  @else
+    @if(isset($adsbanner['cn']))
+    <a href="{{$adsbanner['cn']['url']}}" target="_blank"><img src="{{$adsbanner['cn']['pic']}}" width="100%" /></a>
     @endif
-  </div> 
+  @endif
+</div>
 
+<div class="mbd_ad">
+  @if (app()->getLocale()=='en')
+    @if(isset($adsbanner['en']))
+    <a href="{{$adsbanner['en']['url']}}"><img src="{{$adsbanner['en']['m_pic']}}" width="100%" width="100%" /></a>
+    @endif
+  @else
+    @if(isset($adsbanner['cn']))
+    <a href="{{$adsbanner['cn']['url']}}"><img src="{{$adsbanner['cn']['m_pic']}}" width="100%" width="100%" /></a>
+    @endif
+  @endif
+</div>
+@endif
 
   <!--首页推荐-->
   <div class="index-tj clearfix">
@@ -97,7 +106,7 @@
                     <p class="name">{{$v->name}}</p>
                     <p class="actor">{{$v->number}}</p>
                     <p class="actor">{{$v->category}}</p>
-                    <p class="actor">{{ intval((int)$v->duration/60) }}{{ trans('movie.minute')}}</p>
+                    <p class="actor">{{ intval((int)$v->duration/3600) }}{{ trans('movie.minute')}}</p>
                 </span>
               </a> 
           </li>
@@ -117,22 +126,31 @@
     </div>
   </div>
 
+@if(@adsactive)
 <div class="pcd_ad">
   @if (app()->getLocale()=='en')
-    <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-home-en.gif" width="100%" /></a>
+    @if(isset($adsactive['en']))
+    <a href="{{$adsactive['en']['url']}}" target="_blank"><img src="{{$adsactive['en']['pic']}}" width="100%" /></a>
+    @endif
   @else
-    <a href="https://www.138.mg/" target="_blank"><img src="/images/ads-home-cn.gif" width="100%" /></a>
+    @if(isset($adsactive['cn']))
+    <a href="{{$adsactive['cn']['url']}}" target="_blank"><img src="{{$adsactive['cn']['pic']}}" width="100%" /></a>
+    @endif
   @endif
 </div>
 
 <div class="mbd_ad">
   @if (app()->getLocale()=='en')
-    <a href="https://www.138.mg/"><img src="/images/ads-mobil-en.gif" width="100%" width="100%" /></a>
+    @if(isset($adsactive['en']))
+    <a href="{{$adsactive['en']['url']}}"><img src="{{$adsactive['en']['m_pic']}}" width="100%" width="100%" /></a>
+    @endif
   @else
-    <a href="https://www.138.mg/"><img src="/images/ads-mobil-cn.gif" width="100%" width="100%" /></a>
+    @if(isset($adsactive['cn']))
+    <a href="{{$adsactive['cn']['url']}}"><img src="{{$adsactive['cn']['m_pic']}}" width="100%" width="100%" /></a>
+    @endif
   @endif
 </div>
-
+@endif
 
 <div class="index-area clearfix">
     <h1 class="title index-color">
@@ -154,7 +172,7 @@
                       <p class="name">{{$v->name}}</p>
                       <p class="actor">{{$v->number}}</p>
                       <p class="actor">{{$v->category}}</p>
-                      <p class="actor">{{ intval((int)$v->duration/60) }}{{ trans('movie.minute')}}</p>
+                      <p class="actor">{{ intval((int)$v->duration/3600) }}{{ trans('movie.minute')}}</p>
                   </span>
                 <p class="other"></p>
             </a> 

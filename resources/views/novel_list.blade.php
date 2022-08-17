@@ -1,16 +1,33 @@
 @extends('layout') @section('content')
 
 <div class="main"> 
-<div class="pcd_ad"><table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-    <tr align="center">
-      <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.pcads')}}</td>
-    </tr>
-  </table></div>
-<div class="mbd_ad"><table width="100%" height="90" bgcolor="#33CCCC" style="background:#33CCCC">
-    <tr align="center">
-      <td style="text-align: center;color: #fff;line-height: 90px;background:#33CCCC">{{ trans('website.mobielads')}}</td>
-    </tr>
-  </table></div> 
+
+@if(@ads)
+<div class="pcd_ad" style="margin-bottom: 10px;">
+  @if (app()->getLocale()=='en')
+    @if(isset($ads['en']))
+    <a href="{{$ads['en']['url']}}" target="_blank"><img src="{{$ads['en']['pic']}}" width="100%" /></a>
+    @endif
+  @else
+    @if(isset($ads['cn']))
+    <a href="{{$ads['cn']['url']}}" target="_blank"><img src="{{$ads['cn']['pic']}}" width="100%" /></a>
+    @endif
+  @endif
+</div>
+
+<div class="mbd_ad">
+  @if (app()->getLocale()=='en')
+    @if(isset($ads['en']))
+    <a href="{{$ads['en']['url']}}"><img src="{{$ads['en']['m_pic']}}" width="100%" width="100%" /></a>
+    @endif
+  @else
+    @if(isset($ads['cn']))
+    <a href="{{$ads['cn']['url']}}"><img src="{{$ads['cn']['m_pic']}}" width="100%" width="100%" /></a>
+    @endif
+  @endif
+</div>
+@endif
+
 </div>
 <div class="main">
   <div class="sy-jg mb">
