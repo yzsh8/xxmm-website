@@ -14,6 +14,9 @@ class Trans extends Model
     //通过id来读取分类名称
     public function do($text,$table,$field,$lang){
 
+        //var_dump($lang);
+        //exit();
+
         if($lang == 'zh-CN')
         {
             return $text;
@@ -28,11 +31,6 @@ class Trans extends Model
 
         //从数据库读取数据
         $da = self::select('trans')->where('table',$table)->where('field',$field)->where('origin',$text)->where('lang',$lang)->first();
-
-        echo $text.$table.$field.$lang;
-        var_dump($da);
-        exit();
-
         if($da && $da['trans'])
         {
             //写入redis

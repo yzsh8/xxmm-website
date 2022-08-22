@@ -11,6 +11,7 @@ use App\Models\NovelBook;
 use App\Models\NovelCategory;
 use App\Models\NovelChapter;
 use App\Models\Ads;
+use App\Models\Trans;
 
 class NovelController extends Controller
 {
@@ -43,6 +44,7 @@ class NovelController extends Controller
 
 	public function lists(Request $request,$cid = 0)
 	{
+		$ll = app()->getLocale();
 		$limit  = 30;
 		$page 	= $request->input('page')?$request->input('page'):1;
 		$sort 	= $request->input('sort')?$request->input('sort'):'new';
@@ -70,7 +72,7 @@ class NovelController extends Controller
 			'total'   	=>  $total,				//总记录数
 			'limit'		=> 	$limit,				//每页多少条
 			'cid'		=>	$cid,				//分类
-			'category'	=>	NovelCategory::GetNameForId($cid),
+			'category'	=>	Trans::do(NovelCategory::GetNameForId($cid),'novel_category','name',$ll),
 			'page'		=>	$page,				//当前页
 			'sort'		=> 	$sort,				//排序
 			'ads'		=>	$ads,
@@ -80,6 +82,7 @@ class NovelController extends Controller
 	//显示详细页
 	public function book(Request $request,$id=0)
 	{
+		$ll = app()->getLocale();
 		if(!$id){
 			return view('error',[
 				'error'	=>	'参数错误'
@@ -129,7 +132,7 @@ class NovelController extends Controller
 		return view('novel_book',[
 			'info'		=> 	$info,		//数据
 			'cid'		=>	$cid,		//分类
-			'category'	=>	NovelCategory::GetNameForId($cid),
+			'category'	=>	Trans::do(NovelCategory::GetNameForId($cid),'novel_category','name',$ll),
 			'speed'		=> 	$speed,
 			'lists'		=>	$lists,
 			'total'		=> 	$lists->total(),
@@ -142,6 +145,7 @@ class NovelController extends Controller
 
 	public function chapter(Request $request,$id=0)
 	{
+		$ll = app()->getLocale();
 		if(!$id){
 			return view('error',[
 				'error'	=>	'参数错误'
@@ -166,7 +170,7 @@ class NovelController extends Controller
 
 		return view('novel_chapter',[
 			'cid'		=>	$cid,		//分类
-			'category'	=>	NovelCategory::GetNameForId($cid),
+			'category'	=>	Trans::do(NovelCategory::GetNameForId($cid),'novel_category','name',$ll),
 			'info'		=>	$info,
 			'bid'		=> 	$bid,
 			'bookname' 	=> 	NovelBook::GetNameForId($bid),
