@@ -147,9 +147,7 @@ class NovelController extends Controller
 	{
 		$ll = app()->getLocale();
 		if(!$id){
-			return view('error',[
-				'error'	=>	'参数错误'
-			]);
+			return redirect(url()->previous());
 		}
 
 		$info = NovelChapter::select('id','name','bid','cid','content','created_at')->where('status',1)->where('id',$id)->first();
