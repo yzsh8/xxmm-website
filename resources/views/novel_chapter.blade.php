@@ -10,7 +10,7 @@
     <div class="content_btn ptm-clearfix">
       @if ($left>0)
       <div class="ptm-col-xs-3">
-      <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$left}}">{{ trans('menu.previous')}}</a>
+      <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$left}}">{{ trans('novel.previous')}}</a>
       </div>
       @endif
       <div class="ptm-col-xs-6">
@@ -18,7 +18,7 @@
       </div>
       @if ($right>0)
       <div class="ptm-col-xs-3">
-      <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$right}}">{{ trans('menu.next')}}</a>
+      <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$right}}">{{ trans('novel.next')}}</a>
       </div>
       @endif
     </div>
@@ -32,7 +32,7 @@
 <div class="content_btn ptm-clearfix">
   @if ($left>0)
   <div class="ptm-col-xs-3">
-    <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$left}}">{{ trans('menu.previous')}}</a> 
+    <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$left}}">{{ trans('novel.previous')}}</a> 
   </div>
   @endif
   <div class="ptm-col-xs-6">
@@ -40,7 +40,7 @@
   </div>
   @if ($right>0)
   <div class="ptm-col-xs-3">
-    <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$right}}">{{ trans('menu.next')}}</a> 
+    <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$right}}">{{ trans('novel.next')}}</a> 
   </div>
   @endif
 </div>

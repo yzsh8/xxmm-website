@@ -6,7 +6,7 @@
     <div class="bt-l"> <img class="lazy" data-original="{{get_web_url($info->pic)}}" src="/skin/ecms106/images/load.gif" alt="{{$info['name']}}"> </div>
     <div class="bt-c">
       <dl>
-        <dt class="name">{{$info['name']}}<span class="bz">共{{$info['chapter_num']}}{{ trans('novel.chapter')}}</span></dt>
+        <dt class="name">{{$info['name']}}<span class="bz">{{$info['chapter_num']}}{{ trans('novel.chapter')}}</span></dt>
         <dt><span>{{ trans('novel.category')}}：</span>{{$category}}</dt>
         <dt><span>{{ trans('novel.author')}}：</span>{{$info->author}} </dt>
         <dt><span>{{ trans('novel.status')}}：</span>{{$speed}}</dt>
