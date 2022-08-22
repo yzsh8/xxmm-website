@@ -82,7 +82,6 @@
           <li><a href="/movie/category/2">{{ trans('menu.code')}}</a></li>
           <li><a href="/movie/category/3">{{ trans('menu.chinese')}}</a></li>
           <li><a href="/movie/category/4">{{ trans('menu.eng')}}</a></li>
-          <li><a href="/movie/category/5">FC2</a></li>
         </ul>
       </div>
     </div>
