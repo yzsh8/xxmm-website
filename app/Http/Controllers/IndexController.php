@@ -56,7 +56,7 @@ class IndexController extends Controller
 		}
 
 		//读取首页小说更新前10
-		$novelBook = NovelBook::GetNews(10);
+		$novelBook = NovelBook::GetNews(12);
 		foreach($novelBook as $k=>$v){
 			$v->category 	= NovelCategory::GetNameForId($v->cid);
 			$v->speed 		= ($v->speed==2)?'完本':'连载中';
