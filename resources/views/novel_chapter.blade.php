@@ -8,11 +8,9 @@
     <div style="text-align:center;" class="title"><h1>{{$info->name}}</h1></div>
 
     <div class="content_btn ptm-clearfix">
-      @if ($left>0)
       <div class="ptm-col-xs-3">
       <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$left}}">{{ trans('novel.previous')}}</a>
       </div>
-      @endif
       <div class="ptm-col-xs-6">
       <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/{{$bid}}">{{ trans('novel.catalogue')}}</a>
       </div>
@@ -30,11 +28,9 @@
   </div>
 
 <div class="content_btn ptm-clearfix">
-  @if ($left>0)
   <div class="ptm-col-xs-3">
-    <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$left}}">{{ trans('novel.previous')}}</a> 
+    <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/chapter/{{$left}}">{{ trans('novel.previous')}}</a>
   </div>
-  @endif
   <div class="ptm-col-xs-6">
   <a class="ptm-btn ptm-btn-primary ptm-btn-block ptm-btn-outlined" href="/novel/book/{{$bid}}">{{ trans('novel.catalogue')}}</a>
   </div>
