@@ -28,8 +28,8 @@ class NovelController extends Controller
 		//点击排行10条
 		$tops	= NovelBook::GetNews(10,'view_num');
 
-		//24条
-		$news	= NovelBook::GetNews(10,'updated_at');
+		//12条
+		$news	= NovelBook::GetNews(12,'updated_at');
 		foreach($news as $k=>$v){
 			$v->category = NovelCategory::GetNameForId($v->cid);
 			$news[$k] = $v;

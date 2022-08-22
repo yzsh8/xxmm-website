@@ -10,7 +10,7 @@
         @foreach ($ups as $v)
           <li class="p2 m1 ">
             <a class="link-hover" href="/novel/book/{{$v->id}}" title="{{$v->name}}">
-              <img class="lazy" data-original="{{get_web_url($v->pic)}}" src="/skin/ecms106/images/load.gif" alt="{{$v->name}}">
+              <img class="lazy" data-original="{{get_web_url($v->pic)}}" src="/skin/ecms106/images/logo.jpeg" alt="{{$v->name}}">
               <span class="book-bg"></span>
               <span class="lzbz">
                 <p class="name">{{$v->name}}</p>
@@ -60,7 +60,7 @@
       @foreach ($news as $k=>$v)
         <li class="p1 m1">
             <a class="link-hover" href="/novel/book/{{$v->id}}" title="{{$v->name}}">
-                <img class="lazy" data-original="{{get_web_url($v->pic)}}" src="/skin/ecms106/images/load.gif" alt="{{$v->name}}">
+                <img class="lazy" data-original="{{get_web_url($v->pic)}}" src="/skin/ecms106/images/logo.jpeg" alt="{{$v->name}}">
                 <span class="book-bg"></span>
                 <span class="lzbz">
                     <p class="name">{{$v->name}}</p>

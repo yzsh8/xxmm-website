@@ -3,7 +3,7 @@
 <div class="main">
   <h1 class="title"><a href="/">{{ trans('menu.homne')}}</a>&nbsp;>&nbsp;<a href="/novel">{{ trans('menu.novel')}}</a>&nbsp;>&nbsp;<a href="/novel/category/{{$cid}}">{{$category}}</a> </h1>
   <div class="ct mb clearfix">
-    <div class="bt-l"> <img class="lazy" data-original="{{get_web_url($info->pic)}}" src="/skin/ecms106/images/load.gif" alt="{{$info['name']}}"> </div>
+    <div class="bt-l"> <img class="lazy" data-original="{{get_web_url($info->pic)}}" src="/skin/ecms106/images/logo.jpeg" alt="{{$info['name']}}"> </div>
     <div class="bt-c">
       <dl>
         <dt class="name">{{$info['name']}}<span class="bz">{{$info['chapter_num']}}{{ trans('novel.chapter')}}</span></dt>
