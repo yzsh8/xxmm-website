@@ -11,7 +11,7 @@
         <dt><span>{{ trans('novel.status')}}：</span>{{trans($speed)}}</dt>
         <dt><span>{{ trans('novel.updated')}}：</span>{{ date("Y-m-d H:i",strtotime($info->updated_at)) }}</dt>
       </dl>
-      <div name="ee" class="ee"><span class="js">{{ trans('novel.desc')}}：</span>{{$info->desc}}&hellip;&hellip;</div>
+      <div name="ee" class="ee"><span class="js">{{ trans('novel.note')}}：</span>{{$info->desc}}&hellip;&hellip;</div>
     </div>
     <div class="bt-r">
       <p>

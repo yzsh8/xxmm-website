@@ -8,7 +8,7 @@ return [
     'hots'  => 'Hots',
     'lists'     => 'Lists',
     'updated'   =>  'Updated',
-    'desc'      =>  'Desc',
+    'note'      =>  'Desc',
     'ads'       =>  'Ads',
     'asc'       =>  'Asc',
     'desc'      =>  'Desc',
