@@ -17,6 +17,8 @@ return [
     'next'      =>  'Next',
     'sort-new'  =>  'News',
     'sort-view'  =>  'Hots',
+    'speed-done' => 'Done',
+    'speed-process' => 'Process',
     'c-1' => 'urban passion',
     'c-2' => 'wife exchange',
     'c-3' => 'Campus Spring',

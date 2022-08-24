@@ -20,11 +20,65 @@
       </div>
       @endif
     </div>
+
+    @if(@ads)
+    <div class="pcd_ad" style="margin-top: 10px;">
+      @if (app()->getLocale()=='en')
+        @if(isset($ads['en']))
+        <a href="{{$ads['en']['url']}}" target="_blank"><img src="{{$ads['en']['pic']}}" width="100%" /></a>
+        @endif
+      @else
+        @if(isset($ads['cn']))
+        <a href="{{$ads['cn']['url']}}" target="_blank"><img src="{{$ads['cn']['pic']}}" width="100%" /></a>
+        @endif
+      @endif
+    </div>
+
+    <div class="mbd_ad" style="margin-top: 10px;">
+      @if (app()->getLocale()=='en')
+        @if(isset($ads['en']))
+        <a href="{{$ads['en']['url']}}"><img src="{{$ads['en']['m_pic']}}" width="100%" width="100%" /></a>
+        @endif
+      @else
+        @if(isset($ads['cn']))
+        <a href="{{$ads['cn']['url']}}"><img src="{{$ads['cn']['m_pic']}}" width="100%" width="100%" /></a>
+        @endif
+      @endif
+    </div>
+    @endif
   
   </div>
 
   <div class="chaptercontent" id="BookText" style="font-size: 16px;">
     {!!$info->content!!}
+  </div>
+
+  <div class="main">
+    @if(@ads)
+    <div class="pcd_ad" style="margin-top: 10px;">
+      @if (app()->getLocale()=='en')
+        @if(isset($ads['en']))
+        <a href="{{$ads['en']['url']}}" target="_blank"><img src="{{$ads['en']['pic']}}" width="100%" /></a>
+        @endif
+      @else
+        @if(isset($ads['cn']))
+        <a href="{{$ads['cn']['url']}}" target="_blank"><img src="{{$ads['cn']['pic']}}" width="100%" /></a>
+        @endif
+      @endif
+    </div>
+
+    <div class="mbd_ad" style="margin-top: 10px;">
+      @if (app()->getLocale()=='en')
+        @if(isset($ads['en']))
+        <a href="{{$ads['en']['url']}}"><img src="{{$ads['en']['m_pic']}}" width="100%" width="100%" /></a>
+        @endif
+      @else
+        @if(isset($ads['cn']))
+        <a href="{{$ads['cn']['url']}}"><img src="{{$ads['cn']['m_pic']}}" width="100%" width="100%" /></a>
+        @endif
+      @endif
+    </div>
+    @endif
   </div>
 
 <div class="content_btn ptm-clearfix">

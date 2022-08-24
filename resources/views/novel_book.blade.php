@@ -1,15 +1,14 @@
 @extends('layout') @section('content')
 
 <div class="main">
-  <h1 class="title"><a href="/">{{ trans('menu.homne')}}</a>&nbsp;>&nbsp;<a href="/novel">{{ trans('menu.novel')}}</a>&nbsp;>&nbsp;<a href="/novel/category/{{$cid}}">{{$category}}</a> </h1>
+  <h1 class="title"><a href="/">{{ trans('menu.home')}}</a>&nbsp;>&nbsp;<a href="/novel">{{ trans('menu.novel')}}</a>&nbsp;>&nbsp;<a href="/novel/category/{{$cid}}">{{$category}}</a> </h1>
   <div class="ct mb clearfix">
-    <div class="bt-l"> <img class="lazy" data-original="{{get_web_url($info->pic)}}" src="/skin/ecms106/images/logo.jpeg" alt="{{$info['name']}}"> </div>
     <div class="bt-c">
       <dl>
         <dt class="name">{{$info['name']}}<span class="bz">{{$info['chapter_num']}}{{ trans('novel.chapter')}}</span></dt>
         <dt><span>{{ trans('novel.category')}}：</span>{{$category}}</dt>
         <dt><span>{{ trans('novel.author')}}：</span>{{$info->author}} </dt>
-        <dt><span>{{ trans('novel.status')}}：</span>{{$speed}}</dt>
+        <dt><span>{{ trans('novel.status')}}：</span>{{trans($speed)}}</dt>
         <dt><span>{{ trans('novel.updated')}}：</span>{{ date("Y-m-d H:i",strtotime($info->updated_at)) }}</dt>
       </dl>
       <div name="ee" class="ee"><span class="js">{{ trans('novel.desc')}}：</span>{{$info->desc}}&hellip;&hellip;</div>

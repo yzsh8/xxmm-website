@@ -109,7 +109,7 @@ class NovelController extends Controller
 		}
 
 		//处理状态
-		$speed 		= ($info->speed==2)?'完本':'连载中';
+		$speed 		= ($info->speed==2)?'novel.speed-done':'novel.speed-process';
 
 		//获取参数
 		$limit   =  $request->input('limit')?intval($request->input('limit')):100;
@@ -161,6 +161,9 @@ class NovelController extends Controller
 		$cid 	=	$info['cid'];
 		$bid	= 	$info['bid'];
 
+		//读取广告
+		$ads  = Ads::Gets('novel-chapter');
+
 		//获取上一页id
 		$left = NovelChapter::select('id','name','bid','cid')->where('status',1)->where('bid',$bid)->where('id','<',$id)->orderby('id','desc')->first();
 		//获取下一页id
@@ -174,6 +177,7 @@ class NovelController extends Controller
 			'bookname' 	=> 	NovelBook::GetNameForId($bid),
 			'left'		=>  isset($left['id'])?$left['id']:0,
 			'right'		=>  isset($right['id'])?$right['id']:0,
+			'ads'		=>	$ads,
 		]);
 	}
 	

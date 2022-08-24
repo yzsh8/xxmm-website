@@ -1,25 +1,27 @@
 @extends('layout') @section('content')
 
+<link href="/skin/ecms106/css/novel.css" rel="stylesheet">
 
 <div class="main"> 
   <!--首页推荐-->
   <div class="index-tj clearfix">
-    <div class="index-tj-l">
+    <div class="index-tj-l ptm-card-content">
       <h3 class="title index-color clearfix"> <span class="hitkey"></span>{{ trans('novel.tops')}}:</h3>
-      <ul>
+      <ul class="pt-card pt-card-6">
         @foreach ($ups as $v)
-          <li class="p2 m1 ">
-            <a class="link-hover" href="/novel/book/{{$v->id}}" title="{{$v->name}}">
-              <img class="lazy" data-original="{{get_web_url($v->pic)}}" src="/skin/ecms106/images/logo.jpeg" alt="{{$v->name}}">
-              <span class="book-bg"></span>
-              <span class="lzbz">
-                <p class="name">{{$v->name}}</p>
-                <p class="actor">{{ trans('novel.category')}}：{{$v->category}}</p>
-                <p class="actor">{{ trans('novel.status')}}：{{$v->speed}}</p>
-                <p class="actor">{{ trans('novel.author')}}：{{$v->author}}</p>
-                <p class="actor">{{$v->chapter_num}}{{ trans('novel.chapter')}}</p>
-              </span>
-              </a> 
+          <li>
+            <div class="pt-novel">
+              <div class="pt-one">
+                <span class="pt-author"><strong>[{{$v->category}}]</strong></span>
+                <span class="pt-name"><a href="/novel/book/{{$v->id}}" title="{{$v->name}}">{{$v->name}}</a></span>
+                <span class="pt-author"> / {{$v->author}}</span>
+                <span class="pt-author"> / {{$v->chapter_num}}{{ trans('novel.chapter')}}</span>
+                <span class="pt-author"> / {{($v->speed==2)?trans('novel.speed-done'):trans('novel.speed-process')}}</span>
+              </div>
+            </div>
+            <div class="pt-cover">
+                {{date('y-m-d H:i',strtotime($v->updated_at))}}
+            </div>
           </li>
         @endforeach
       </ul>
@@ -56,20 +58,21 @@
 
   <div class="index-area clearfix">
     <h1 class="title index-color"> <span class="hitkey kp"></span> <a href="/novel/category">{{ trans('novel.lists')}}</a> </h1>
-    <ul>
+    <ul class="pt-card pt-card-6">
       @foreach ($news as $k=>$v)
-        <li class="p1 m1">
-            <a class="link-hover" href="/novel/book/{{$v->id}}" title="{{$v->name}}">
-                <img class="lazy" data-original="{{get_web_url($v->pic)}}" src="/skin/ecms106/images/logo.jpeg" alt="{{$v->name}}">
-                <span class="book-bg"></span>
-                <span class="lzbz">
-                    <p class="name">{{$v->name}}</p>
-                    <p class="actor">{{ trans('novel.category')}}：{{$v->category}}</p>
-                    <p class="actor">{{ trans('novel.status')}}：{{$v->speed}}</p>
-                    <p class="actor">{{ trans('novel.author')}}：{{$v->author}}</p>
-                </span>
-                <p class="other"><i>{{$v->chapter_num}}{{ trans('novel.chapter')}}</i></p>
-            </a> 
+        <li>
+            <div class="pt-novel">
+              <div class="pt-one">
+                <span class="pt-author"><strong>[{{$v->category}}]</strong></span>
+                <span class="pt-name"><a href="/novel/book/{{$v->id}}" title="{{$v->name}}">{{$v->name}}</a></span>
+                <span class="pt-author"> / {{$v->author}}</span>
+                <span class="pt-author"> / {{$v->chapter_num}}{{ trans('novel.chapter')}}</span>
+                <span class="pt-author"> / {{($v->speed==2)?trans('novel.speed-done'):trans('novel.speed-process')}}</span>
+              </div>
+            </div>
+            <div class="pt-cover">
+                {{date('y-m-d H:i',strtotime($v->updated_at))}}
+            </div>
         </li>
       @endforeach
     </ul>

@@ -17,6 +17,8 @@ return [
     'next'      =>  '下一页',
     'sort-new'  =>  '最新',
     'sort-view' =>  '人气',
+    'speed-done' => '完本',
+    'speed-process' => '连载中',
     'c-1'         =>  '都市激情',
     'c-2'         =>  '人妻交换',
     'c-3'         =>  '校园春色',

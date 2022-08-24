@@ -181,26 +181,4 @@
     </ul>
 </div>
 
-
-<div class="index-area clearfix">
-    <h1 class="title index-color"><span class="hitkey kp"><a href="/novel">{{ trans('website.more')}}»</a></span> <a href="/novel">{{ trans('menu.novel')}}</a></h1>
-    <ul>
-      @foreach ($novelbook as $v)
-        <li class="p1 m1">
-            <a class="link-hover" href="/novel/book/{{$v->id}}" title="{{$v->name}}">
-                <img class="lazy" data-original="{{get_web_url($v->pic)}}" src="/skin/ecms106/images/logo.jpeg" alt="{{$v->name}}">
-                <span class="book-bg"></span>
-                <span class="lzbz">
-                    <p class="name">{{$v->name}}</p>
-                    <p class="actor">{{ trans('novel.category')}}：{{$v->category}}</p>
-                    <p class="actor">{{ trans('novel.status')}}：{{$v->speed}}</p>
-                    <p class="actor">{{ trans('novel.author')}}：{{$v->author}}</p>
-                </span>
-                <p class="other"><i>{{$v->chapter_num}}{{ trans('novel.chapter')}}</i></p>
-            </a> 
-        </li>
-      @endforeach
-    </ul>
-  </div>
-
 @endsection

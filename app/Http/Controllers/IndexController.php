@@ -48,20 +48,20 @@ class IndexController extends Controller
 		//影片分类
 		$movieCategory = MovieCategory::select('id','name')->where('status',1)->get();
 
-		//读取12条影片
-		$movieLists	= Movie::GetLists(0,1,12);
+		//读取24条影片
+		$movieLists	= Movie::GetLists(0,1,24);
 		foreach($movieLists as $k=>$v){
 			$v->category = MovieCategory::GetNameForId($v->cid);
 			$movieLists[$k] = $v;
 		}
 
 		//读取首页小说更新前10
-		$novelBook = NovelBook::GetNews(12);
+		/*$novelBook = NovelBook::GetNews(12);
 		foreach($novelBook as $k=>$v){
 			$v->category 	= NovelCategory::GetNameForId($v->cid);
 			$v->speed 		= ($v->speed==2)?'完本':'连载中';
 			$novelBook[$k] = $v;
-		}
+		}*/
 
 		//读取广告
 		$adsBanner  = Ads::Gets('home-banner');
@@ -71,7 +71,7 @@ class IndexController extends Controller
 			'banner'	=>	$banner,
 			'links'		=> 	$links,
 			'maxview'	=> 	$maxViews,
-			'novelbook'	=> 	$novelBook,
+			//'novelbook'	=> 	$novelBook,
 			'mc' 		=> 	$movieCategory,
 			'ml'		=> 	$movieLists,
 			'adsbanner'	=>	$adsBanner,

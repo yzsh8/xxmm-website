@@ -40,7 +40,7 @@ class NovelBook extends Model
         $lists = Redis::Smembers($cacheKey);
         if(!$lists){
 
-            $novel = self::select('id','name','cid','author','chapter_num','speed','pic')->where('status',1)->orderby($sort,'desc')->limit($limit)->get();
+            $novel = self::select('id','name','cid','author','chapter_num','speed','pic','updated_at')->where('status',1)->orderby($sort,'desc')->limit($limit)->get();
 
             //数据写入redis
             foreach($novel as $k=>$v)
@@ -72,7 +72,7 @@ class NovelBook extends Model
         $offset = ($page-1)*$limit;
 
         //优先读取redis
-        $novel = DB::select("select id,name,cid,author,chapter_num,speed,pic from novel_book where $where status=1 order by $sort desc limit $offset,$limit");
+        $novel = DB::select("select id,name,cid,author,chapter_num,speed,pic,updated_at from novel_book where $where status=1 order by $sort desc limit $offset,$limit");
 
         return $novel;
     }

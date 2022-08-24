@@ -1,5 +1,6 @@
 @extends('layout') @section('content')
 
+<link href="/skin/ecms106/css/novel.css" rel="stylesheet">
 <div class="main"> 
 
 @if(@ads)
@@ -40,20 +41,21 @@
     <p class="px"> <a class="time on" href="/novel/category/{{$cid}}?sort=new"><em></em>{{ trans('novel.sort-new')}}</a> <a class="rq" href="/novel/category/{{$cid}}?sort=click"><em></em>{{ trans('novel.sort-view')}}</a></p>
   </div>
   <div class="index-area clearfix">
-    <ul>
+    <ul class="pt-card pt-card-6">
       @foreach ($ml as $v)
-        <li class="p1 m1">
-          <a class="link-hover" href="/novel/book/{{$v->id}}" title="{{$v->name}}">
-              <img class="lazy" data-original="{{get_web_url($v->pic)}}" src="/skin/ecms106/images/load.gif" alt="{{$v->name}}">
-              <span class="book-bg"></span>
-              <span class="lzbz">
-                  <p class="name">{{$v->name}}</p>
-                    <p class="actor">{{ trans('novel.category')}}：{{$v->category}}</p>
-                    <p class="actor">{{ trans('novel.status')}}：{{$v->speed}}</p>
-                    <p class="actor">{{ trans('novel.author')}}：{{$v->author}}</p>
-              </span>
-              <p class="other"><i>{{$v->chapter_num}}{{ trans('novel.chapter')}}</i></p>
-            </a> 
+        <li>
+            <div class="pt-novel">
+              <div class="pt-one">
+                <span class="pt-author"><strong>[{{$v->category}}]</strong></span>
+                <span class="pt-name"><a href="/novel/book/{{$v->id}}" title="{{$v->name}}">{{$v->name}}</a></span>
+                <span class="pt-author"> / {{$v->author}}</span>
+                <span class="pt-author"> / {{$v->chapter_num}}{{ trans('novel.chapter')}}</span>
+                <span class="pt-author"> / {{($v->speed==2)?trans('novel.speed-done'):trans('novel.speed-process')}}</span>
+              </div>
+            </div>
+            <div class="pt-cover">
+                {{date('y-m-d H:i',strtotime($v->updated_at))}}
+            </div>
         </li>
       @endforeach
     </ul>
