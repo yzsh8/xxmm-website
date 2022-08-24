@@ -20,6 +20,17 @@ class IndexController extends Controller
 	//首页
 	public function index(Request $request){
 
+		//指定域名，设置英文
+		$arrWebsite = ['xxmmvv.com','xxmmuu.com','xxmmtt.com','xxmmss.com','xxmmll.com'];
+		$host = $request->getHost();
+		$host = str_replace('www.', '', $host);
+		
+		if(in_array($host, $arrWebsite)){
+			if(!Session::has('locale')){
+	            return redirect('/language/en');
+	        }
+		}
+
 		//读取首页热门
 		$banner = Movie::GetHots(9);
 
