@@ -14,6 +14,7 @@ use App\Models\Movie;
 use App\Models\NovelBook;
 use App\Models\NovelCategory;
 use App\Models\Ads;
+use Illuminate\Support\Facades\Session;
 
 class IndexController extends Controller
 {
