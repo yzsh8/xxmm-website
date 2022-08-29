@@ -45,6 +45,12 @@ if (! function_exists('get_video_url')) {
             case 'movie98':
                 $path = "//mv4.xxmmww.com/".$base;
                 break;
+            case 'movie18':
+                $path = "//mv5.xxmmww.com/".$base;
+                break;
+            case 'movie66':
+                $path = "//mv6.xxmmww.com/".$base;
+                break;
         }
 
         return $path;
