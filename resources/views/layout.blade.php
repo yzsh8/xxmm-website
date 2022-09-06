@@ -31,7 +31,7 @@
         <li class="" _t_nav="topnav-1"><a href="/movie">{{ trans('menu.movie')}}</a></li>
         <li class="" ><a href="/movie/category/1">{{ trans('menu.nocode')}}</a></li>
         <li class="" ><a href="/movie/category/2">{{ trans('menu.code')}}</a></li>
-        <li class="" ><a href="/movie/category/3">{{ trans('menu.chinese')}}</a></li>
+        <!--<li class="" ><a href="/movie/category/3">{{ trans('menu.chinese')}}</a></li>-->
         <li class="" ><a href="/movie/category/4">{{ trans('menu.eng')}}</a></li>
         <li class="" _t_nav="topnav-2"><a href="/novel">{{ trans('menu.novel')}}<i class="sjbgs"></i><i class="sjbgx"></i></a></li>
         <li class=""><a href="/feedback">{{ trans('menu.feedback')}}</a></li>
@@ -80,7 +80,7 @@
         <ul>
           <li><a href="/movie/category/1">{{ trans('menu.nocode')}}</a></li>
           <li><a href="/movie/category/2">{{ trans('menu.code')}}</a></li>
-          <li><a href="/movie/category/3">{{ trans('menu.chinese')}}</a></li>
+          <!--<li><a href="/movie/category/3">{{ trans('menu.chinese')}}</a></li>-->
           <li><a href="/movie/category/4">{{ trans('menu.eng')}}</a></li>
         </ul>
       </div>
@@ -101,7 +101,7 @@
         <ul>
           <li><a href="/movie/category/1">{{ trans('menu.nocode')}}</a></li>
           <li><a href="/movie/category/2">{{ trans('menu.code')}}</a></li>
-          <li><a href="/movie/category/3">{{ trans('menu.chinese')}}</a></li>
+          <!--<li><a href="/movie/category/3">{{ trans('menu.chinese')}}</a></li>-->
           <li><a href="/movie/category/4">{{ trans('menu.eng')}}</a></li>
         </ul>
       </div>
